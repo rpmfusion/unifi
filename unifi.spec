@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.7.20
-Release:        1%{?dist}
+Release:        1%{?dist}.1
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -261,6 +261,7 @@ fi
 %license PERMISSION*.html
 %ifarch x86_64 armv7hl aarch64
 %{_libdir}/libubnt_webrtc_jni.so
+%{_datadir}/unifi/lib/native/
 %endif
 %{_sbindir}/%{name}
 %{_sysconfdir}/logrotate.d/%{name}
@@ -274,6 +275,7 @@ fi
 %dir %attr(-,unifi,unifi) %{_sharedstatedir}/%{name}/work
 
 %files data
+%exclude %{_datadir}/unifi/lib/native
 %{_datadir}/%{name}/
 
 

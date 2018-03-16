@@ -1,0 +1,15 @@
+For RHEL/CentOS/SL etc, you will also need Fedora EPEL repository installed for mongodb, on CentOS it's already available:
+
+(as root or sudo)
+# yum install epel-release
+
+Enable the unifi service and the firewall config:
+
+# firewall-cmd --permanent --add-service=unifi 
+# firewall-cmd --reload
+# systemctl enable unifi.service
+# systemctl start unifi.service
+
+Afterwards you should be able to browse to the controller at:
+
+<host>:8443

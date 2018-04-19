@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.7.20
-Release:        1%{?dist}.1
+Version:        5.7.23
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -280,6 +280,9 @@ fi
 
 
 %changelog
+* Tue Apr 17 2018 Richard Shaw <hobbes1069@gmail.com> - 5.7.23-1
+- Update to 5.7.23.
+
 * Thu Mar 08 2018 Richard Shaw <hobbes1069@gmail.com> - 5.7.20-1
 - Update to 5.7.20.
 - Add new webrtc target aarch64.

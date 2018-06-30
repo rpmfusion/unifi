@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.7.23
+Version:        5.8.23
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -15,6 +15,7 @@ Source1:        unifi.service
 Source3:        unifi.xml
 Source4:        unifi.logrotate
 Source5:        unifi.sh
+Source6:        mongod.sh
 Source100:      PERMISSION-1.html
 Source101:      PERMISSION-2.html
 Source102:      SETUP
@@ -201,6 +202,15 @@ install %{SOURCE5} %{buildroot}%{_sbindir}/%{name}
 # Install forum messages giving permission to redistribute.
 install -p %{SOURCE100} %{SOURCE101} .
 
+#
+# Workaround script for MongoDB 3.6 no longer accepting --nohttpinterface.
+# See: https://community.ubnt.com/t5/UniFi-Routing-Switching/MongoDB-3-6/m-p/2322445#M86254
+#
+%if 0%{?fedora} >= 28
+    install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
+%endif
+
+
 
 %pre
 # Migrate UniFi log to the proper directory
@@ -280,6 +290,13 @@ fi
 
 
 %changelog
+* Sat Jun 30 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.23-1
+- Update to 5.8.23.
+
+* Mon May 07 2018 Richard Shaw <hobbes1069@gmail.com> - 5.7.23-2
+- Add workaround shell script to prevent --nohttpdinterface from being passed to
+  MongoDB.
+
 * Tue Apr 17 2018 Richard Shaw <hobbes1069@gmail.com> - 5.7.23-1
 - Update to 5.7.23.
 

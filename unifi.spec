@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.8.24
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -290,6 +290,9 @@ fi
 
 
 %changelog
+* Fri Jul 27 2018 RPM Fusion Release Engineering <sergio@serjux.com> - 5.8.24-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Thu Jul 05 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.24-1
 - Update to 5.8.24
 

@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.8.24
-Release:        3%{?dist}
+Version:        5.8.28
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -290,6 +290,9 @@ fi
 
 
 %changelog
+* Wed Aug 22 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.28-1
+- Update to 5.8.28
+
 * Sun Aug 19 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.8.24-3
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 

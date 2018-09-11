@@ -291,7 +291,8 @@ fi
 
 %changelog
 * Tue Sep 11 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.30-1
-- Update to 5.8.30.
+- Update to 5.8.30, see:
+  https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-30-Stable-has-been-released/ba-p/2489957
 
 * Wed Aug 22 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.28-1
 - Update to 5.8.28

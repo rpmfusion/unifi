@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.8.30
+Version:        5.9.29
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -290,6 +290,10 @@ fi
 
 
 %changelog
+* Thu Oct 04 2018 Richard Shaw <hobbes1069@gmail.com> - 5.9.29-1
+- Update to 5.9.29, see:
+  https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-9-29-Stable-has-been-released/ba-p/2516852
+
 * Tue Sep 11 2018 Richard Shaw <hobbes1069@gmail.com> - 5.8.30-1
 - Update to 5.8.30, see:
   https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-SDN-Controller-5-8-30-Stable-has-been-released/ba-p/2489957

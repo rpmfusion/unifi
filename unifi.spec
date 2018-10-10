@@ -172,7 +172,6 @@ rm -rf %{buildroot}%{_datadir}/unifi/lib/native/{Windows,Mac}
 
 # webrtc is only supported on x86_64, aarch64 and armv7hf.
 # Move libraries to the correct location and symlink back
-mkdir -p %{buildroot}%{_libdir}
 mv %{buildroot}%{_datadir}/unifi/lib/native/Linux ./
 %ifarch x86_64 armv7hl aarch64
 # Set the correct arch for the webrtc library.
@@ -181,10 +180,12 @@ mv %{buildroot}%{_datadir}/unifi/lib/native/Linux ./
 %else 
 %global unifi_arch %{_target_cpu}
 %endif
-mkdir -p %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
-mv Linux/%{unifi_arch}/libubnt_webrtc_jni.so %{buildroot}%{_libdir}/
-ln -sr %{buildroot}%{_libdir}/libubnt_webrtc_jni.so \
-       %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
+mkdir -p %{buildroot}%{_libdir}/unifi \
+         %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
+install -pm 0755 Linux/%{unifi_arch}/*.so %{buildroot}%{_libdir}/%{name}/
+for lib in $(ls %{buildroot}%{_libdir}/%{name}/*.so); do
+    ln -sr $lib %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
+done
 %endif
 
 # Try to fix java VM warning about running execstack on libubnt_webrtc_jni.so
@@ -270,7 +271,7 @@ fi
 %doc readme.txt SETUP
 %license PERMISSION*.html
 %ifarch x86_64 armv7hl aarch64
-%{_libdir}/libubnt_webrtc_jni.so
+%{_libdir}/unifi/
 %{_datadir}/unifi/lib/native/
 %endif
 %{_sbindir}/%{name}

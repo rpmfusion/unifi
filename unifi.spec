@@ -186,10 +186,10 @@ install -pm 0755 Linux/%{unifi_arch}/*.so %{buildroot}%{_libdir}/%{name}/
 for lib in $(ls %{buildroot}%{_libdir}/%{name}/*.so); do
     ln -sr $lib %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
 done
-%endif
-
 # Try to fix java VM warning about running execstack on libubnt_webrtc_jni.so
 find %{buildroot}%{_libdir} -name libubnt_webrtc_jni.so -exec execstack -c {} \;
+%endif
+
 
 # Install logrotate config
 mkdir -p %{buildroot}%{_sysconfdir}/logrotate.d

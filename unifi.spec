@@ -170,7 +170,7 @@ install -pm 0644 %{SOURCE3} %{buildroot}%{_prefix}/lib/firewalld/services/
 # Remove non-native executables
 rm -rf %{buildroot}%{_datadir}/unifi/lib/native/{Windows,Mac}
 
-# webrtc is only supported on x86_64, aarch64 and armv7hf.
+# Bundled libs are only supported on x86_64, aarch64 and armv7hf.
 # Move libraries to the correct location and symlink back
 mv %{buildroot}%{_datadir}/unifi/lib/native/Linux ./
 %ifarch x86_64 armv7hl aarch64

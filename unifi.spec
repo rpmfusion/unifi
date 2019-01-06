@@ -29,7 +29,7 @@ BuildRequires:  firewalld-filesystem
 BuildRequires:  %{_bindir}/execstack
 
 Requires:       mongodb-server
-Requires:       java-headless >= 1:1.8.0
+Requires:       java-1.8.0-openjdk-headless
 Requires(post): policycoreutils-python
 Requires(postun): policycoreutils-python
 

@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.9.29
-Release:        2%{?dist}
+Version:        5.10.12
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -217,13 +217,13 @@ install -p %{SOURCE100} %{SOURCE101} .
 # Fixes RFBZ#5080, also see:
 # https://community.ubnt.com/t5/UniFi-Wireless/Running-Unifi-Controller-on-Java-9-10-and-11/m-p/2559045/highlight/true
 #
-%if 0%{?fedora} >= 29
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
+%if 0%{?fedora} >= 29
 cat << EOF > %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 JAVA_OPTS="--add-modules java.activation"
 EOF
 %else
-touch %{buildroot}%{_sysconfdir}/%{name}
+touch %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 %endif
 
 
@@ -306,6 +306,9 @@ fi
 
 
 %changelog
+* Thu Feb 07 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.12-1
+- Update to 5.10.12.
+
 * Tue Nov 13 2018 Richard Shaw <hobbes1069@gmail.com> - 5.9.29-2
 - Update systemd service file to deal with Java 10 in F29+, fixes BZ#5080.
 

@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.12
+Version:        5.10.19
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -228,17 +228,6 @@ touch %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 
 
 %pre
-# Migrate UniFi log to the proper directory
-if [ -d %{_sharedstatedir}/%{name}/logs ]; then
-   mv -f %{_sharedstatedir}/%{name}/logs/* \
-         %{_localstatedir}/log/%{name}/ 2>/dev/null
-   rmdir %{_sharedstatedir}/%{name}/logs
-fi
-# Migrate run directory to the proper directory
-if [ ! -h %{_datadir}/%{name}/run ]; then
-   mv -f %{_datadir}/%{name}/run \
-         %{_sharedstatedir}/%{name}/ 2>/dev/null
-fi
 getent group unifi >/dev/null || groupadd -r unifi
 getent passwd unifi >/dev/null || \
     useradd -r -g unifi -d %{_sharedstatedir}/%{name} -s /sbin/nologin \
@@ -306,6 +295,12 @@ fi
 
 
 %changelog
+* Tue Feb 26 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.19-1
+- Update to 5.10.19
+
+* Thu Feb 14 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.17-1
+- Update to 5.10.17.
+
 * Thu Feb 07 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.12-1
 - Update to 5.10.12.
 

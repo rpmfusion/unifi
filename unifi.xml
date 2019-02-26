@@ -9,5 +9,4 @@
   <port port="8843" protocol="tcp"/>
   <port port="8880" protocol="tcp"/>
   <port port="10001" protocol="udp"/>
-<!--  <port port="27117" protocol="tcp"/> -->
 </service>

@@ -25,10 +25,24 @@ For RHEL/CentOS/SL etc, you will also need Fedora EPEL repository installed for 
 (as root or sudo)
 # yum install epel-release
 
+####################
+#### All systems ###
+####################
+
 Enable the unifi service and the firewall config:
 
 # firewall-cmd --permanent --add-service=unifi 
+
+To permit Cloud Access:
+
+# firewall-cmd --permanent --add-service=unifi-cloud
+
+Then reload the configuration:
+
 # firewall-cmd --reload
+
+Enabling and starting the unifi service:
+
 # systemctl enable unifi.service
 # systemctl start unifi.service
 

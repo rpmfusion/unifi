@@ -218,7 +218,7 @@ install -p %{SOURCE100} %{SOURCE101} .
 # https://community.ubnt.com/t5/UniFi-Wireless/Running-Unifi-Controller-on-Java-9-10-and-11/m-p/2559045/highlight/true
 #
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-%if 0%{?fedora} >= 29
+%if 0%{?fedora} > 29
 cat << EOF > %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 JAVA_OPTS="--add-modules java.activation"
 EOF

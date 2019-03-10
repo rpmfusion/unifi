@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 #
 # Workaround script for MongoDB 3.6 no longer accepting --nohttpinterface.
 #

@@ -4,12 +4,13 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.19
-Release:        2%{?dist}
+Version:        5.10.21
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
 URL:            https://unifi-sdn.ubnt.com/
+
 Source0:        http://dl.ubnt.com/unifi/%{version}/UniFi.unix.zip#/UniFi-%{version}.unix.zip
 Source1:        unifi.service
 Source3:        unifi.xml
@@ -295,6 +296,12 @@ fi
 
 
 %changelog
+* Sun Apr 07 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.21-1
+- Update to 5.10.21.
+
+* Tue Mar 12 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.20-1
+- Update to 5.10.20.
+
 * Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.10.19-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 

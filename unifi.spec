@@ -29,7 +29,13 @@ Requires:       firewalld-filesystem
 BuildRequires:  firewalld-filesystem
 BuildRequires:  %{_bindir}/execstack
 
+%if 0%{?fedora} > 29
+# https://fedoraproject.org/wiki/Changes/MongoDB_Removal
+# Must use MongoDB provided version/package.
+Requires:       mongodb-org-server
+%else
 Requires:       mongodb-server
+%endif
 Requires:       java-1.8.0-openjdk-headless
 Requires(post): policycoreutils-python
 Requires(postun): policycoreutils-python

@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.21
+Version:        5.10.23
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -296,6 +296,9 @@ fi
 
 
 %changelog
+* Sat May 04 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.23-1
+- Update to 5.10.23.
+
 * Sun Apr 07 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.21-1
 - Update to 5.10.21.
 

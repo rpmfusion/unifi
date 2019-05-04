@@ -284,6 +284,7 @@ fi
 %{_libdir}/unifi/
 %{_datadir}/unifi/lib/native/
 %endif
+%{_datadir}/unifi/bin/mongod
 %{_sbindir}/%{name}
 %{_sysconfdir}/logrotate.d/%{name}
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
@@ -298,6 +299,7 @@ fi
 
 %files data
 %exclude %{_datadir}/unifi/lib/native
+%exclude %{_datadir}/unifi/bin/mongod
 %{_datadir}/%{name}/
 
 

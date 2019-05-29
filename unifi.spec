@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.10.23
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -31,8 +31,7 @@ BuildRequires:  %{_bindir}/execstack
 
 %if 0%{?fedora} > 29
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
-# Must use MongoDB provided version/package.
-Requires:       mongodb-org-server
+Requires:       /usr/bin/mongod
 %else
 Requires:       mongodb-server
 %endif
@@ -304,6 +303,9 @@ fi
 
 
 %changelog
+* Wed May 29 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.23-2
+- Require /usr/bin/mongod on F30+.
+
 * Sat May 04 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.23-1
 - Update to 5.10.23.
 

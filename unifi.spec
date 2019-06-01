@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.23
-Release:        2%{?dist}
+Version:        5.10.24
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -303,6 +303,9 @@ fi
 
 
 %changelog
+* Sat Jun 01 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.24-1
+- Update to 5.10.24.
+
 * Wed May 29 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.23-2
 - Require /usr/bin/mongod on F30+.
 

@@ -8,10 +8,6 @@ Type=simple
 User=unifi
 WorkingDirectory=/usr/share/unifi
 EnvironmentFile=-/etc/sysconfig/unifi
-# Has to be run though bash script due to java issue, see:
-# https://bugzilla.redhat.com/show_bug.cgi?id=1358476#c20
-#ExecStart=/usr/sbin/unifi start
-#ExecStop=/usr/sbin/unifi stop
 ExecStart=/usr/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
 ExecStop=/usr/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
 Restart=on-success

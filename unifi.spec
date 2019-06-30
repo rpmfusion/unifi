@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.24
+Version:        5.10.25
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -15,7 +15,6 @@ Source0:        http://dl.ubnt.com/unifi/%{version}/UniFi.unix.zip#/UniFi-%{vers
 Source1:        unifi.service
 Source3:        unifi.xml
 Source4:        unifi.logrotate
-Source5:        unifi.sh
 Source6:        mongod.sh
 Source100:      PERMISSION-1.html
 Source101:      PERMISSION-2.html
@@ -29,12 +28,8 @@ Requires:       firewalld-filesystem
 BuildRequires:  firewalld-filesystem
 BuildRequires:  %{_bindir}/execstack
 
-%if 0%{?fedora} > 29
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 Requires:       /usr/bin/mongod
-%else
-Requires:       mongodb-server
-%endif
 Requires:       java-1.8.0-openjdk-headless
 Requires(post): policycoreutils-python
 Requires(postun): policycoreutils-python
@@ -201,11 +196,6 @@ find %{buildroot}%{_libdir} -name libubnt_webrtc_jni.so -exec execstack -c {} \;
 mkdir -p %{buildroot}%{_sysconfdir}/logrotate.d
 install -pm 0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/logrotate.d/%{name}
 
-# Install wrapper script for java to workaround lack of $ORIGIN when executed
-# directly.
-mkdir -p %{buildroot}%{_sbindir}
-install %{SOURCE5} %{buildroot}%{_sbindir}/%{name}
-
 # Install forum messages giving permission to redistribute.
 install -p %{SOURCE100} %{SOURCE101} .
 
@@ -213,24 +203,11 @@ install -p %{SOURCE100} %{SOURCE101} .
 # Workaround script for MongoDB 3.6 no longer accepting --nohttpinterface.
 # See: https://community.ubnt.com/t5/UniFi-Routing-Switching/MongoDB-3-6/m-p/2322445#M86254
 #
-%if 0%{?fedora} >= 28
-    install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
-%endif
+install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
 
-#
-# Workaround for java.activation module being depreceated in Java 10
-# It is removed from Java 11 (worry about it when it's in Fedora)
-# Fixes RFBZ#5080, also see:
-# https://community.ubnt.com/t5/UniFi-Wireless/Running-Unifi-Controller-on-Java-9-10-and-11/m-p/2559045/highlight/true
-#
+# Install empty sysconfig file for packaging.
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-%if 0%{?fedora} > 29
-cat << EOF > %{buildroot}%{_sysconfdir}/sysconfig/%{name}
-JAVA_OPTS="--add-modules java.activation"
-EOF
-%else
 touch %{buildroot}%{_sysconfdir}/sysconfig/%{name}
-%endif
 
 
 %pre
@@ -284,7 +261,6 @@ fi
 %{_datadir}/unifi/lib/native/
 %endif
 %{_datadir}/unifi/bin/mongod
-%{_sbindir}/%{name}
 %{_sysconfdir}/logrotate.d/%{name}
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_unitdir}/%{name}.service
@@ -303,6 +279,11 @@ fi
 
 
 %changelog
+* Sun Jun 30 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.25-1
+- Update to 5.10.25.
+- Remove obsolete shell script, unifi,sh.
+- Remove --add-modules workaround as it does not apply to JRE 8 (OpenJDK 1.8.0).
+
 * Sat Jun 01 2019 Richard Shaw <hobbes1069@gmail.com> - 5.10.24-1
 - Update to 5.10.24.
 

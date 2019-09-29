@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.10.25
-Release:        2%{?dist}
+Version:        5.11.46
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -279,6 +279,13 @@ fi
 
 
 %changelog
+* Sun Sep 29 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-1
+- Update to 5.11.46, for release notes see:
+  https://community.ui.com/releases/UniFi-Network-Controller-5-11-46/1984aaf0-7243-4257-af83-70126714613e
+
+* Wed Sep 11 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.39-1
+- Update to 5.11.39.
+
 * Sat Aug 10 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.10.25-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 

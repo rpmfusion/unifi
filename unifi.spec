@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.11.46
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -31,8 +31,8 @@ BuildRequires:  %{_bindir}/execstack
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 Requires:       /usr/bin/mongod
 Requires:       java-1.8.0-openjdk-headless
-Requires(post): policycoreutils-python
-Requires(postun): policycoreutils-python
+Requires(post): policycoreutils-python-utils
+Requires(postun): policycoreutils-python-utils
 
 # Unbundled fonts
 Requires:       fontawesome-fonts
@@ -279,6 +279,10 @@ fi
 
 
 %changelog
+* Thu Oct 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-2
+- Change requirement from policycoreutils-python to policycoreutils-python-utils
+  so Python 3 is used instead of Python 2 to manage selinux contexts.
+
 * Sun Sep 29 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-1
 - Update to 5.11.46, for release notes see:
   https://community.ui.com/releases/UniFi-Network-Controller-5-11-46/1984aaf0-7243-4257-af83-70126714613e

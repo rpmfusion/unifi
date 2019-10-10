@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service version="1.0">
+<short>unifi-cloud</short>
+<description>UniFi Cloud Access</description>
+  <port port="8883" protocol="tcp"/>
+</service>

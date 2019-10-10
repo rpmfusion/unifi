@@ -13,7 +13,8 @@ URL:            https://unifi-sdn.ubnt.com/
 
 Source0:        http://dl.ubnt.com/unifi/%{version}/UniFi.unix.zip#/UniFi-%{version}.unix.zip
 Source1:        unifi.service
-Source3:        unifi.xml
+Source2:        unifi.xml
+Source3:        unifi-cloud.xml
 Source4:        unifi.logrotate
 Source6:        mongod.sh
 Source100:      PERMISSION-1.html
@@ -166,6 +167,7 @@ install -D -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 
 # Install firewalld config
 mkdir -p %{buildroot}%{_prefix}/lib/firewalld/services
+install -pm 0644 %{SOURCE2} %{buildroot}%{_prefix}/lib/firewalld/services/
 install -pm 0644 %{SOURCE3} %{buildroot}%{_prefix}/lib/firewalld/services/
 
 # Remove non-native executables
@@ -208,7 +210,7 @@ install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
 # Install sysconfig file.
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
 cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOL
-JAVA_HOME=/usr/lib/jvm/java-1.8.0
+# Add site specific java options here by assining "JAVA_OPTS"
 EOL
 
 

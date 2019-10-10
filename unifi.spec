@@ -268,7 +268,7 @@ fi
 %{_sysconfdir}/logrotate.d/%{name}
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_unitdir}/%{name}.service
-%{_prefix}/lib/firewalld/services/%{name}.xml
+%{_prefix}/lib/firewalld/services/*.xml
 %ghost %attr(-,unifi,unifi) %config(missingok,noreplace) %{_sharedstatedir}/%{name}/data/system.properties
 %attr(-,unifi,unifi) %{_localstatedir}/log/%{name}/
 %dir %attr(-,unifi,unifi) %{_sharedstatedir}/%{name}

@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.11.46
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -29,8 +29,8 @@ BuildRequires:  firewalld-filesystem
 BuildRequires:  %{_bindir}/execstack
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
-Requires:       /usr/bin/mongod
-Requires:       java-1.8.0-openjdk-headless
+#Requires:       /usr/bin/mongod
+Requires:       java-headless = 1:1.8.0
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -187,10 +187,10 @@ install -pm 0755 Linux/%{unifi_arch}/*.so %{buildroot}%{_libdir}/%{name}/
 for lib in $(ls %{buildroot}%{_libdir}/%{name}/*.so); do
     ln -sr $lib %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
 done
+
 # Try to fix java VM warning about running execstack on libubnt_webrtc_jni.so
 find %{buildroot}%{_libdir} -name libubnt_webrtc_jni.so -exec execstack -c {} \;
 %endif
-
 
 # Install logrotate config
 mkdir -p %{buildroot}%{_sysconfdir}/logrotate.d
@@ -205,9 +205,11 @@ install -p %{SOURCE100} %{SOURCE101} .
 #
 install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
 
-# Install empty sysconfig file for packaging.
+# Install sysconfig file.
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-touch %{buildroot}%{_sysconfdir}/sysconfig/%{name}
+cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOL
+JAVA_HOME=/usr/lib/jvm/java-1.8.0
+EOL
 
 
 %pre
@@ -279,6 +281,11 @@ fi
 
 
 %changelog
+* Thu Oct 10 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-3
+- Remove mongod requires and move config info to SETUP.
+- Fix Requires for java to comply with guidelines.
+- Try JAVA_HOME instead of forcing java 1.8.0 via alternatives.
+
 * Thu Oct 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-2
 - Change requirement from policycoreutils-python to policycoreutils-python-utils
   so Python 3 is used instead of Python 2 to manage selinux contexts.

@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.11.46
-Release:        3%{?dist}
+Version:        5.12.35
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -283,6 +283,9 @@ fi
 
 
 %changelog
+* Tue Dec 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-1
+- Update to 5.12.0.
+
 * Thu Oct 10 2019 Richard Shaw <hobbes1069@gmail.com> - 5.11.46-3
 - Remove mongod requires and move config info to SETUP.
 - Fix Requires for java to comply with guidelines.

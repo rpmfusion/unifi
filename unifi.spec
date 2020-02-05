@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        5.12.35
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -283,6 +283,9 @@ fi
 
 
 %changelog
+* Wed Feb 05 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.12.35-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Tue Dec 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-1
 - Update to 5.12.0.
 

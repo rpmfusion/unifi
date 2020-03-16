@@ -286,6 +286,9 @@ fi
 * Mon Mar 16 2020 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-2
 - Update java requires to work with change in java provides in Fedora.
 
+* Wed Feb 05 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.12.35-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Tue Dec 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-1
 - Update to 5.12.0.
 

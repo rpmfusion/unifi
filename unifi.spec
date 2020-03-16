@@ -5,13 +5,13 @@
 
 Name:           unifi
 Version:        5.12.35
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
 URL:            https://unifi-sdn.ubnt.com/
 
-Source0:        http://dl.ubnt.com/unifi/%{version}/UniFi.unix.zip#/UniFi-%{version}.unix.zip
+Source0:        http://dl.ui.com/unifi/%{version}/UniFi.unix.zip#/UniFi-%{version}.unix.zip
 Source1:        unifi.service
 Source2:        unifi.xml
 Source3:        unifi-cloud.xml
@@ -31,7 +31,7 @@ BuildRequires:  %{_bindir}/execstack
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
-Requires:       java-headless = 1:1.8.0
+Requires:       java-headless >= 1:1.8.0
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -283,6 +283,9 @@ fi
 
 
 %changelog
+* Mon Mar 16 2020 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-2
+- Update java requires to work with change in java provides in Fedora.
+
 * Tue Dec 03 2019 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-1
 - Update to 5.12.0.
 

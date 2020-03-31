@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.12.35
-Release:        2%{?dist}
+Version:        5.12.66
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -283,6 +283,9 @@ fi
 
 
 %changelog
+* Tue Mar 31 2020 Richard Shaw <hobbes1069@gmail.com> - 5.12.66-1
+- Update to 5.12.66.
+
 * Mon Mar 16 2020 Richard Shaw <hobbes1069@gmail.com> - 5.12.35-2
 - Update java requires to work with change in java provides in Fedora.
 

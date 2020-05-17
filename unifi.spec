@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.12.66
+Version:        5.12.72
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -48,62 +48,60 @@ Provides:       bundled(ubnt-fonts)
 
 # Bundled java ;obraries
 # This needs to be automated!
-Provides:       bundled(commons-io) = 2.4
-Provides:       bundled(compiler) = 0.8.18
-Provides:       bundled(commons-logging) = 1.1.3
-Provides:       bundled(commons-codec) = 1.7
-Provides:       bundled(httpcore) = 4.2
-Provides:       bundled(commons-validator) = 1.5.0
-Provides:       bundled(spring-core) = 3.2.8
-Provides:       bundled(aws-java-sdk-core) = 1.9.3
-Provides:       bundled(urlrewritefilter) = 4.0.4
-Provides:       bundled(jorbis) = 0.0.17
-Provides:       bundled(spring-expression) = 3.2.8
-Provides:       bundled(sshj) = 0.9.0
-Provides:       bundled(mail) = 1.4.7
-Provides:       bundled(commons-lang) = 2.6
-Provides:       bundled(radclient4)
-Provides:       bundled(spring-context) 3.2.8
-Provides:       bundled(cron4j) = 2.2.5
-Provides:       bundled(tomcat-annotations-api) = 7.0.82
-Provides:       bundled(jmdns) = 3.4.1
-Provides:       bundled(mongo-java-driver) = 2.14.3
-Provides:       bundled(httpclient) = 4.2
-Provides:       bundled(slf4j-log4j12) = 1.7.6
-Provides:       bundled(dom4j) = 1.3
-Provides:       bundled(spring-beans) = 3.2.8
-Provides:       bundled(jackson-annotations) = 2.1.1
-Provides:       bundled(aws-java-sdk-cloudwatch) = 1.9.3
-Provides:       bundled(annotations) = 2.0.0
-Provides:       bundled(snappy-java) = 1.1.2.6
-Provides:       bundled(tomcat-embed-logging-juli) = 7.0.82
-Provides:       bundled(commons-beanutils) = 1.9.1
-Provides:       bundled(tomcat-embed-core) =  7.0.82
-Provides:       bundled(tomcat-embed-jasper) = 7.0.82
-Provides:       bundled(jstl) = 1.2
-Provides:       bundled(aws-java-sdk-s3) = 1.9.3
-Provides:       bundled(servo-core) = 0.9.4
-Provides:       bundled(log4j) = 1.2.17
-Provides:       bundled(slf4j-api) = 1.7.6
-Provides:       bundled(commons-net) = 3.3
+
+Provides:       bundled(annotations) = 3.0.1
+Provides:       bundled(aws-java-sdk-cloudwatch) = 1.11.409
+Provides:       bundled(aws-java-sdk-core) = 1.11.409
+Provides:       bundled(aws-java-sdk-s3) = 1.11.409
+Provides:       bundled(commons-beanutils) = 1.9.3
+Provides:       bundled(commons-codec) = 1.11
+Provides:       bundled(commons-httpclient) = 3.1-2
 Provides:       bundled(commons-httpclient-contrib) = 3.1
-Provides:       bundled(jul-to-slf4j) = 1.7.6
-Provides:       bundled(gson) = 2.2.4
-Provides:       bundled(jstun) = 0.7.3
-Provides:       bundled(Java-WebSocket) = 1.3.0
-Provides:       bundled(jackson-databind) = 2.1.1
-Provides:       bundled(commons-httpclient) = 3.1
-Provides:       bundled(spring-test) = 3.2.8
-Provides:       bundled(tomcat-embed-logging-log4j) = 7.0.82
-Provides:       bundled(commons-pool2) = 2.2
-Provides:       bundled(jsch) = 0.1.51
-Provides:       bundled(joda-time) = 2.9.4
-Provides:       bundled(jackson-core) = 2.1.1
-Provides:       bundled(guava) = 14.0.1
-Provides:       bundled(ecj) = 4.3.1
-Provides:       bundled(jedis) = 2.8.1
-Provides:       bundled(tomcat-embed-el) = 7.0.82
-Provides:       bundled(servo-graphite) = 0.9.4
+Provides:       bundled(commons-io) = 2.6
+Provides:       bundled(commons-lang) = 2.6
+Provides:       bundled(commons-logging) = 1.2
+Provides:       bundled(commons-net) = 3.6
+Provides:       bundled(commons-pool2) = 2.6.0
+Provides:       bundled(commons-validator) = 1.6
+Provides:       bundled(compiler) = 0.9.5
+Provides:       bundled(cron4j) = 2.2.5
+Provides:       bundled(dom4j) = 1.6.1
+Provides:       bundled(ecj) = 4.6.1
+Provides:       bundled(gson) = 2.8.5
+Provides:       bundled(guava) = 26.0
+Provides:       bundled(httpclient) = 4.5.6
+Provides:       bundled(httpcore) = 4.4.10
+Provides:       bundled(jackson-annotations) = 2.9.7
+Provides:       bundled(jackson-core) = 2.9.7
+Provides:       bundled(jackson-databind) = 2.9.7
+Provides:       bundled(jedis) = 2.9.0
+Provides:       bundled(jmdns) = 3.4.1
+Provides:       bundled(joda-time) = 2.10.1
+Provides:       bundled(jorbis) = 0.0.17
+Provides:       bundled(jstl) = 1.2
+Provides:       bundled(jstun) = 0.7.4
+Provides:       bundled(jul-to-slf4j) = 1.7.25
+Provides:       bundled(log4j) = 2.11.1
+Provides:       bundled(mongo-java-driver) = 3.4.3
+Provides:       bundled(radclient4)
+Provides:       bundled(servo-core) = 0.12.25
+Provides:       bundled(servo-graphite) = 0.12.25
+Provides:       bundled(slf4j-api) = 1.7.25
+Provides:       bundled(slf4j-log4j12) = 1.7.25
+Provides:       bundled(snappy-java) = 1.1.7.2
+Provides:       bundled(spring-beans) = 5.1.2
+Provides:       bundled(spring-context) = 5.1.2
+Provides:       bundled(spring-core) = 5.1.2
+Provides:       bundled(spring-expression) = 5.1.2
+Provides:       bundled(spring-test) = 5.1.2
+Provides:       bundled(sshj) = 0.26.0
+Provides:       bundled(tomcat-annotations-api) = 8.5.34
+Provides:       bundled(tomcat-embed-core) =  8.5.34
+Provides:       bundled(tomcat-embed-el) = 8.5.34
+Provides:       bundled(tomcat-embed-jasper) = 8.5.34
+Provides:       bundled(tomcat-embed-logging-juli) = 8.5.2
+Provides:       bundled(tomcat-embed-logging-log4j) = 8.5.2
+Provides:       bundled(urlrewritefilter) = 4.0.4
 
 # So you can prevent automatic updates.
 %if 0%{?fedora}
@@ -283,6 +281,9 @@ fi
 
 
 %changelog
+* Fri May 15 2020 Alexander Jacocks <alexander@redhat.com> - 5.12.72-1
+- Update to 5.12.72.
+
 * Tue Mar 31 2020 Richard Shaw <hobbes1069@gmail.com> - 5.12.66-1
 - Update to 5.12.66.
 

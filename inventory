@@ -1,0 +1,5 @@
+[build]
+localhost  ansible_connection=local
+
+[build:vars]
+version=5.12.72

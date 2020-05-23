@@ -1,0 +1,167 @@
+---
+
+- hosts: localhost
+  vars:
+  - deps:
+    - execstack
+  - dlPage: "https://www.ui.com/download/unifi/unifi-ap"
+  - dlURL: "http://dl.ui.com/unifi/{{version}}/UniFi.unix.zip#/UniFi-{{version}}.unix.zip"
+  - rpmTools:
+    - pandoc
+    - rpm-build
+    - rpmdevtools
+  - sourceFiles:
+    - unifi.service
+    - unifi.xml
+    - unifi-cloud.xml
+    - unifi.logrotate
+    - mongod.sh
+    - PERMISSION-1.html
+    - PERMISSION-2.html
+    - SETUP
+
+  tasks:
+  - name: set the date
+    set_fact:
+      dateStamp: "{{ lookup('pipe','date \"+%a %B %0d %Y\"') }}"
+    tags:
+    - always
+
+  - name: install required rpm development tools
+    package:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+    - "{{ rpmTools }}"
+    - "{{ deps }}"
+    become: yes
+    tags:
+    - always
+
+  - name: create rpm development tree in user home directory
+    command: rpmdev-setuptree
+    tags:
+    - always
+
+  - name: create temp working directory
+    tempfile:
+      state: directory
+      prefix: "ubnt."
+    register: tempdir
+    tags:
+    - always
+
+  - debug:
+      var: tempdir
+    tags:
+    - always
+
+  - name: download archive
+    get_url:
+      url: "{{ dlURL }}"
+      dest: "~/rpmbuild/SOURCES/UniFi-{{ version }}.unix.zip"
+      mode: '0640'
+    tags:
+    - always
+
+  - name: extract archive
+    unarchive:
+      src: "~/rpmbuild/SOURCES/UniFi-{{ version }}.unix.zip"
+      dest: "{{ tempdir.path }}"
+    tags:
+    - always
+
+  - name: set the rpm file variable
+    set_fact:
+      libInfo: "{{ lookup( 'pipe', playbook_dir + '/version-scan.sh ' + tempdir.path + '/UniFi/lib' + ' jar' ) }}"
+    tags:
+    - always
+
+  - name: create spec file
+    template:
+      src: unifi.spec.j2
+      dest: "{{ tempdir.path }}/unifi.spec"
+    tags:
+    - always
+
+  - name: copy spec file to RPMbuild dir
+    copy:
+      src: "{{ tempdir.path }}/unifi.spec"
+      dest: "~/rpmbuild/SPECS/unifi-{{ version }}.spec"
+    tags:
+    - always
+
+  - name: copy source files to RPMbuild dir
+    copy:
+      src: "{{ item }}"
+      dest: "~/rpmbuild/SOURCES/{{ item }}"
+    with_items:
+    - "{{ sourceFiles }}"
+    tags:
+    - always
+
+  - name: build rpm
+    command: "rpmbuild -bb {{ ansible_env.HOME }}/rpmbuild/SPECS/unifi-{{ version }}.spec"
+    register: rpmbuild
+    tags:
+    - always
+
+  - debug:
+      var: rpmbuild
+    tags:
+    - always
+
+  - name: register rpmbuild output file variable
+    set_fact:
+      rpmBuildOut: "{{ tempdir.path }}/rpmbuild.out"
+    tags:
+    - always
+
+  - name: write output to file
+    copy:
+      content: "{{ rpmbuild.stdout }}"
+      dest: "{{ rpmBuildOut }}"
+    tags:
+    - always
+
+  - name: set the rpm file variable
+    set_fact:
+      rpmFiles: "{{ lookup( 'pipe', 'egrep ^Wrote:\  ' + rpmBuildOut ) }}"
+    tags:
+    - always
+
+  - debug:
+      var: rpmFiles
+    tags:
+    - always
+
+  - name: update the rpm file variable
+    set_fact:
+      rpmFiles:
+      - "{{ rpmFiles.split('\n')[0] | regex_replace('^Wrote: ', '' ) }}"
+      - "{{ rpmFiles.split('\n')[1] | regex_replace('^Wrote: ', '' ) }}"
+    tags:
+    - always
+
+  - name: install package
+    package:
+      name: "{{ rpmFiles }}"
+      state: latest
+    become: true
+    tags:
+    - never
+    - install
+
+  - name: clean up temp directory
+    file:
+      path: "{{ tempdir.path }}"
+      state: absent
+    tags:
+    - always
+
+  - debug:
+      var: rpmFiles
+    tags:
+    - always
+
+...

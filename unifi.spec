@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.13.32
-Release:        2%{?dist}
+Version:        5.14.22
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -108,11 +108,13 @@ Provides:       bundled(j2objc-annotations) = 1.1
 Provides:       bundled(jackson-annotations) = 2.10.0
 Provides:       bundled(jackson-core) = 2.10.0
 Provides:       bundled(jackson-databind) = 2.10.0
+Provides:       bundled(jackson-datatype-jdk8) = 2.10.0
 Provides:       bundled(jakarta.validation-api) = 2.0.2
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(javax.mail) = 1.6.2
 Provides:       bundled(jboss-logging) = 3.3.2.Final
+Provides:       bundled(jcl-over-slf4j) = 1.7.28
 Provides:       bundled(jenetics) = 4.2.0
 Provides:       bundled(jmdns) = 3.4.1
 Provides:       bundled(joda-time) = 2.10.4
@@ -145,6 +147,8 @@ Provides:       bundled(spring-aop) = 5.1.5
 Provides:       bundled(spring-beans) = 5.1.5
 Provides:       bundled(spring-context) = 5.1.5
 Provides:       bundled(spring-core) = 5.1.5
+Provides:       bundled(spring-data-commons) = 1.13.23
+Provides:       bundled(spring-data-mongodb) = 1.10.23
 Provides:       bundled(spring-expression) = 5.1.5
 Provides:       bundled(springfox-core) = 2.9.2
 Provides:       bundled(springfox-schema) = 2.9.2
@@ -156,6 +160,7 @@ Provides:       bundled(springfox-swagger-ui) = 2.9.2
 Provides:       bundled(spring-plugin-core) = 1.2.0
 Provides:       bundled(spring-plugin-metadata) = 1.2.0
 Provides:       bundled(spring-test) = 5.1.5
+Provides:       bundled(spring-tx) = 5.1.5
 Provides:       bundled(spring-web) = 5.1.5
 Provides:       bundled(spring-webmvc) = 5.1.5
 Provides:       bundled(spring-websocket) = 5.1.5
@@ -350,6 +355,9 @@ fi
 
 
 %changelog
+* Sat Aug 24 2020 Richard Shaw <hobbes1069@gmail.com> - 5.14.22-1
+- Update to 5.14.22.
+
 * Wed Aug 19 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.13.32-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 

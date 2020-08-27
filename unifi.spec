@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.14.22
+Version:        5.14.23
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -273,12 +273,6 @@ install -pm 0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/logrotate.d/%{name}
 # Install forum messages giving permission to redistribute.
 install -p %{SOURCE100} %{SOURCE101} .
 
-#
-# Workaround script for MongoDB 3.6 no longer accepting --nohttpinterface.
-# See: https://community.ubnt.com/t5/UniFi-Routing-Switching/MongoDB-3-6/m-p/2322445#M86254
-#
-install -pm 0755 %{SOURCE6} %{buildroot}%{_datadir}/unifi/bin/mongod
-
 # Install sysconfig file.
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
 cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOL
@@ -355,7 +349,12 @@ fi
 
 
 %changelog
-* Sat Aug 24 2020 Richard Shaw <hobbes1069@gmail.com> - 5.14.22-1
+* Thu Aug 27 2020 Richard Shaw <hobbes1069@gmail.com> - 5.14.23-1
+- Update to 5.14.23, for details see:
+  https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a
+- Remove workaround for MongoDB 3.6 as it is no longer required.
+
+* Mon Aug 24 2020 Richard Shaw <hobbes1069@gmail.com> - 5.14.22-1
 - Update to 5.14.22.
 
 * Wed Aug 19 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 5.13.32-2

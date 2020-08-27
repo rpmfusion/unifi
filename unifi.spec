@@ -16,7 +16,6 @@ Source1:        unifi.service
 Source2:        unifi.xml
 Source3:        unifi-cloud.xml
 Source4:        unifi.logrotate
-Source6:        mongod.sh
 Source100:      PERMISSION-1.html
 Source101:      PERMISSION-2.html
 Source102:      SETUP

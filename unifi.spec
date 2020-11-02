@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        5.14.23
+Version:        6.0.28
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -69,7 +69,7 @@ Provides:       bundled(commons-dbcp2) = 2.7.0
 Provides:       bundled(commons-httpclient-3.1-atlassian) = 2
 Provides:       bundled(commons-httpclient-contrib) = 3.1
 Provides:       bundled(commons-io) = 2.6
-Provides:       bundled(commons-lang3) = 3.9
+Provides:       bundled(commons-lang3) = 3.10
 Provides:       bundled(commons-logging) = 1.2
 Provides:       bundled(commons-net) = 3.6
 Provides:       bundled(commons-pool2) = 2.7.0
@@ -104,16 +104,16 @@ Provides:       bundled(hibernate-validator) = 6.1.2.Final
 Provides:       bundled(httpclient) = 4.5.10
 Provides:       bundled(httpcore) = 4.4.12
 Provides:       bundled(j2objc-annotations) = 1.1
-Provides:       bundled(jackson-annotations) = 2.10.0
-Provides:       bundled(jackson-core) = 2.10.0
-Provides:       bundled(jackson-databind) = 2.10.0
-Provides:       bundled(jackson-datatype-jdk8) = 2.10.0
+Provides:       bundled(jackson-annotations) = 2.11.0
+Provides:       bundled(jackson-core) = 2.11.0
+Provides:       bundled(jackson-databind) = 2.11.0
+Provides:       bundled(jackson-datatype-jdk8) = 2.11.0
 Provides:       bundled(jakarta.validation-api) = 2.0.2
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(javax.mail) = 1.6.2
 Provides:       bundled(jboss-logging) = 3.3.2.Final
-Provides:       bundled(jcl-over-slf4j) = 1.7.28
+Provides:       bundled(jcl-over-slf4j) = 1.7.30
 Provides:       bundled(jenetics) = 4.2.0
 Provides:       bundled(jmdns) = 3.4.1
 Provides:       bundled(joda-time) = 2.10.4
@@ -122,10 +122,10 @@ Provides:       bundled(json) = 20190722
 Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
-Provides:       bundled(jul-to-slf4j) = 1.7.28
-Provides:       bundled(log4j-api) = 2.12.1
-Provides:       bundled(log4j-core) = 2.12.1
-Provides:       bundled(log4j-slf4j-impl) = 2.12.1
+Provides:       bundled(jul-to-slf4j) = 1.7.30
+Provides:       bundled(log4j-api) = 2.13.3
+Provides:       bundled(log4j-core) = 2.13.3
+Provides:       bundled(log4j-slf4j-impl) = 2.13.3
 Provides:       bundled(mongo-java-driver) = 3.4.3
 Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
@@ -136,11 +136,11 @@ Provides:       bundled(protobuf-java-util) = 3.6.0
 Provides:       bundled(proto-google-common-protos) = 1.12.0
 Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(radclient4) = 0.12.0
-Provides:       bundled(servo-aws) = 0.12.28
-Provides:       bundled(servo-core) = 0.12.28
-Provides:       bundled(servo-graphite) = 0.12.28
-Provides:       bundled(slf4j-api) = 1.7.28
-Provides:       bundled(snappy-java) = 1.1.7.3
+Provides:       bundled(servo-aws) = 0.13.0
+Provides:       bundled(servo-core) = 0.13.0
+Provides:       bundled(servo-graphite) = 0.13.0
+Provides:       bundled(slf4j-api) = 1.7.30
+Provides:       bundled(snappy-java) = 1.1.7.5
 Provides:       bundled(spectator-api) = 0.88.0
 Provides:       bundled(spring-aop) = 5.1.5
 Provides:       bundled(spring-beans) = 5.1.5
@@ -166,13 +166,13 @@ Provides:       bundled(spring-websocket) = 5.1.5
 Provides:       bundled(sshj) = 0.27.0
 Provides:       bundled(swagger-annotations) = 1.5.20
 Provides:       bundled(swagger-models) = 1.5.20
-Provides:       bundled(tomcat-annotations-api) = 8.5.51
-Provides:       bundled(tomcat-embed-core) = 8.5.51
-Provides:       bundled(tomcat-embed-el) = 8.5.51
-Provides:       bundled(tomcat-embed-jasper) = 8.5.51
+Provides:       bundled(tomcat-annotations-api) = 8.5.56
+Provides:       bundled(tomcat-embed-core) = 8.5.56
+Provides:       bundled(tomcat-embed-el) = 8.5.56
+Provides:       bundled(tomcat-embed-jasper) = 8.5.56
 Provides:       bundled(tomcat-embed-logging-juli) = 8.5.2
 Provides:       bundled(tomcat-embed-logging-log4j) = 8.5.2
-Provides:       bundled(tomcat-embed-websocket) = 8.5.51
+Provides:       bundled(tomcat-embed-websocket) = 8.5.56
 Provides:       bundled(urlrewritefilter) = 4.0.4
 ### END AUTOMATION ###
 
@@ -348,6 +348,18 @@ fi
 
 
 %changelog
+* Sun Oct 25 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.28-1
+- Update to 6.0.28, see:
+  https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f
+
+* Fri Oct 16 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.23-1
+- Update to 6.0.23, see:
+  https://community.ui.com/releases/UniFi-Network-Controller-6-0-23/6ee72622-e3ca-4ebe-9e82-97fe7cca2094
+
+* Thu Sep 17 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.22-1
+- Update to 6.0.22 for testing, see:
+  https://community.ui.com/releases/UniFi-Network-Controller-6-0-22/910ceffc-f0e9-4518-86c1-df5eeee34695
+
 * Thu Aug 27 2020 Richard Shaw <hobbes1069@gmail.com> - 5.14.23-1
 - Update to 5.14.23, for details see:
   https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a

@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.0.28
+Version:        6.0.41
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -348,6 +348,14 @@ fi
 
 
 %changelog
+* Thu Dec 03 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.41-1
+- Update to 6.0.41 see:
+  https://community.ui.com/releases/UniFi-Network-Controller-6-0-41/25633411-0273-4197-bf30-4aff30b3701e
+
+* Wed Nov 25 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.36-1
+- Update to 6.0.36, see:
+  https://community.ui.com/releases/UniFi-Network-Controller-6-0-36/9e57165b-3422-4fcf-ae02-13affcb388c8
+
 * Sun Oct 25 2020 Richard Shaw <hobbes1069@gmail.com> - 6.0.28-1
 - Update to 6.0.28, see:
   https://community.ui.com/releases/UniFi-Network-Controller-6-0-28/23c77a99-0957-449a-b3c0-58a37d4df81f

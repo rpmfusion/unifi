@@ -1,17 +1,7 @@
-/var/log/unifi/server.log* {
+/var/log/unifi/server.log {
   monthly
   maxage 365
   compress
   missingok
   copytruncate
-}
-
-/var/log/unifi/mongod.log {
-  monthly
-  maxage 365
-  compress
-  missingok
-  lastaction
-    killall -SIGUSR1 mongod
-  endscript
 }

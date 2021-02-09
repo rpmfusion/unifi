@@ -348,7 +348,7 @@ fi
 
 
 %changelog
-* Sat Jan 30 2021 Richard Shaw <hobbes1069@gmail.com> - 6.0.45-1
+* Tue Feb 09 2021 Richard Shaw <hobbes1069@gmail.com> - 6.0.45-1
 - Update to 6.0.45, see:
   https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842
 - Fix logrotate config, https://github.com/rpmfusion/unifi/pull/3

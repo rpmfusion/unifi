@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.0.45
+Version:        6.2.25
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -50,6 +50,7 @@ Provides:       bundled(ubnt-fonts)
 Provides:       bundled(ace) = 9999
 Provides:       bundled(animal-sniffer-annotations) = 1.17
 Provides:       bundled(annotations) = 3.0.1
+Provides:       bundled(antlr4-runtime) = 4.7.2
 Provides:       bundled(api-common) = 1.7.0
 Provides:       bundled(apigateway-generic-java-sdk) = 1.3
 Provides:       bundled(auto-value) = 1.6.2
@@ -61,6 +62,7 @@ Provides:       bundled(bcpkix-jdk15on) = 1.60
 Provides:       bundled(bcprov-jdk15on) = 1.60
 Provides:       bundled(byte-buddy) = 1.8.12
 Provides:       bundled(checker-qual) = 2.5.2
+Provides:       bundled(classgraph) = 4.8.59
 Provides:       bundled(classmate) = 1.4.0
 Provides:       bundled(coloring) = 1.0
 Provides:       bundled(commons-beanutils) = 1.9.2
@@ -83,6 +85,7 @@ Provides:       bundled(eddsa) = 0.2.0
 Provides:       bundled(error_prone_annotations) = 2.2.0
 Provides:       bundled(failureaccess) = 1.0.1
 Provides:       bundled(gax) = 1.31.0
+Provides:       bundled(geantyref) = 1.3.11
 Provides:       bundled(google-api-client) = 1.26.0
 Provides:       bundled(google-api-services-drive-v3-rev20180830) = 1.26.0
 Provides:       bundled(google-api-services-storage-v1-rev135) = 1.24.1
@@ -98,7 +101,9 @@ Provides:       bundled(google-http-client-jackson) = 1.24.1
 Provides:       bundled(google-http-client-jackson2) = 1.26.0
 Provides:       bundled(google-http-client-jdo) = 1.26.0
 Provides:       bundled(google-oauth-client) = 1.26.0
+Provides:       bundled(graphql-java) = 13.0
 Provides:       bundled(gson) = 2.8.5
+Provides:       bundled(gson-java8-datatype) = 1.1.0
 Provides:       bundled(guava-27.1) = jre
 Provides:       bundled(hibernate-validator) = 6.1.2.Final
 Provides:       bundled(httpclient) = 4.5.10
@@ -108,7 +113,10 @@ Provides:       bundled(jackson-annotations) = 2.11.0
 Provides:       bundled(jackson-core) = 2.11.0
 Provides:       bundled(jackson-databind) = 2.11.0
 Provides:       bundled(jackson-datatype-jdk8) = 2.11.0
+Provides:       bundled(jackson-datatype-jsr310) = 2.10.1
+Provides:       bundled(jackson-module-parameter-names) = 2.10.1
 Provides:       bundled(jakarta.validation-api) = 2.0.2
+Provides:       bundled(java-dataloader) = 2.1.1
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(javax.mail) = 1.6.2
@@ -136,12 +144,15 @@ Provides:       bundled(protobuf-java-util) = 3.6.0
 Provides:       bundled(proto-google-common-protos) = 1.12.0
 Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(radclient4) = 0.12.0
+Provides:       bundled(reactive-streams) = 1.0.3
+Provides:       bundled(reactor-core) = 3.4.0
 Provides:       bundled(servo-aws) = 0.13.0
 Provides:       bundled(servo-core) = 0.13.0
 Provides:       bundled(servo-graphite) = 0.13.0
 Provides:       bundled(slf4j-api) = 1.7.30
 Provides:       bundled(snappy-java) = 1.1.7.5
 Provides:       bundled(spectator-api) = 0.88.0
+Provides:       bundled(spqr) = 0.10.1
 Provides:       bundled(spring-aop) = 5.1.5
 Provides:       bundled(spring-beans) = 5.1.5
 Provides:       bundled(spring-context) = 5.1.5
@@ -348,6 +359,12 @@ fi
 
 
 %changelog
+* Fri Jun 04 2021 Richard Shaw <hobbes1069@gmail.com> - 6.2.25-1
+- Update to 6.2.25.
+
+* Fri Mar 26 2021 Richard Shaw <hobbes1069@gmail.com> - 6.1.71-1
+- Update to 6.1.71.
+
 * Tue Feb 09 2021 Richard Shaw <hobbes1069@gmail.com> - 6.0.45-1
 - Update to 6.0.45, see:
   https://community.ui.com/releases/UniFi-Network-Controller-6-0-45/8d3b98e1-b9d4-4ab3-b8da-721dbe9ab842

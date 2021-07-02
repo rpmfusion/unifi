@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.2.25
+Version:        6.2.26
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -359,6 +359,9 @@ fi
 
 
 %changelog
+* Sun Jun 27 2021 Richard Shaw <hobbes1069@gmail.com> - 6.2.26-1
+- Update to 6.2.26.
+
 * Fri Jun 04 2021 Richard Shaw <hobbes1069@gmail.com> - 6.2.25-1
 - Update to 6.2.25.
 

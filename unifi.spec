@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        6.2.26
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -359,6 +359,9 @@ fi
 
 
 %changelog
+* Wed Aug 04 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 6.2.26-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Sun Jun 27 2021 Richard Shaw <hobbes1069@gmail.com> - 6.2.26-1
 - Update to 6.2.26.
 

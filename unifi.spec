@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.2.26
-Release:        2%{?dist}
+Version:        6.4.54
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -48,6 +48,9 @@ Provides:       bundled(ubnt-fonts)
 # Bundled java libraries
 ### BEGIN AUTOMATION ###
 Provides:       bundled(ace) = 9999
+Provides:       bundled(analytics-api) = 1.2.1
+Provides:       bundled(analytics-client) = 1.2.1
+Provides:       bundled(analytics-privacy) = 1.2.1
 Provides:       bundled(animal-sniffer-annotations) = 1.17
 Provides:       bundled(annotations) = 3.0.1
 Provides:       bundled(antlr4-runtime) = 4.7.2
@@ -153,13 +156,13 @@ Provides:       bundled(slf4j-api) = 1.7.30
 Provides:       bundled(snappy-java) = 1.1.7.5
 Provides:       bundled(spectator-api) = 0.88.0
 Provides:       bundled(spqr) = 0.10.1
-Provides:       bundled(spring-aop) = 5.1.5
-Provides:       bundled(spring-beans) = 5.1.5
-Provides:       bundled(spring-context) = 5.1.5
-Provides:       bundled(spring-core) = 5.1.5
+Provides:       bundled(spring-aop) = 5.3.7
+Provides:       bundled(spring-beans) = 5.3.7
+Provides:       bundled(spring-context) = 5.3.7
+Provides:       bundled(spring-core) = 5.3.7
 Provides:       bundled(spring-data-commons) = 1.13.23
 Provides:       bundled(spring-data-mongodb) = 1.10.23
-Provides:       bundled(spring-expression) = 5.1.5
+Provides:       bundled(spring-expression) = 5.3.7
 Provides:       bundled(springfox-core) = 2.9.2
 Provides:       bundled(springfox-schema) = 2.9.2
 Provides:       bundled(springfox-spi) = 2.9.2
@@ -169,11 +172,11 @@ Provides:       bundled(springfox-swagger-common) = 2.9.2
 Provides:       bundled(springfox-swagger-ui) = 2.9.2
 Provides:       bundled(spring-plugin-core) = 1.2.0
 Provides:       bundled(spring-plugin-metadata) = 1.2.0
-Provides:       bundled(spring-test) = 5.1.5
-Provides:       bundled(spring-tx) = 5.1.5
-Provides:       bundled(spring-web) = 5.1.5
-Provides:       bundled(spring-webmvc) = 5.1.5
-Provides:       bundled(spring-websocket) = 5.1.5
+Provides:       bundled(spring-test) = 5.3.7
+Provides:       bundled(spring-tx) = 5.3.7
+Provides:       bundled(spring-web) = 5.3.7
+Provides:       bundled(spring-webmvc) = 5.3.7
+Provides:       bundled(spring-websocket) = 5.3.7
 Provides:       bundled(sshj) = 0.27.0
 Provides:       bundled(swagger-annotations) = 1.5.20
 Provides:       bundled(swagger-models) = 1.5.20
@@ -359,6 +362,10 @@ fi
 
 
 %changelog
+* Mon Sep 20 2021 Richard Shaw <hobbes1069@gmail.com> - 6.4.54-1
+- Update to 6.4.54, see:
+  https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d
+
 * Wed Aug 04 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 6.2.26-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 

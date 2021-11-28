@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.4.54
+Version:        6.5.53
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -362,6 +362,10 @@ fi
 
 
 %changelog
+* Sun Nov 28 2021 Richard Shaw <hobbes1069@gmail.com> - 6.5.53-1
+- Update to 6.5.53 (NOTE: RC 6.5.51 contains the majority of the release notes)
+- https://community.ui.com/releases/UniFi-Network-Application-6-5-51/781e3ae2-0f56-42ba-8753-599d4aaa1638
+
 * Mon Sep 20 2021 Richard Shaw <hobbes1069@gmail.com> - 6.4.54-1
 - Update to 6.4.54, see:
   https://community.ui.com/releases/UniFi-Network-Application-6-4-54/c1be3b7f-44c4-4d6f-af1e-707bf017110d

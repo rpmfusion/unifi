@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.5.53
+Version:        6.5.54
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -134,9 +134,9 @@ Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 1.7.30
-Provides:       bundled(log4j-api) = 2.13.3
-Provides:       bundled(log4j-core) = 2.13.3
-Provides:       bundled(log4j-slf4j-impl) = 2.13.3
+Provides:       bundled(log4j-api) = 2.15.0
+Provides:       bundled(log4j-core) = 2.15.0
+Provides:       bundled(log4j-slf4j-impl) = 2.15.0
 Provides:       bundled(mongo-java-driver) = 3.4.3
 Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
@@ -362,6 +362,9 @@ fi
 
 
 %changelog
+* Tue Dec 14 2021 Richard Shaw <hobbes1069@gmail.com> - 6.5.54-1
+- Update to 6.5.54.
+
 * Sun Nov 28 2021 Richard Shaw <hobbes1069@gmail.com> - 6.5.53-1
 - Update to 6.5.53 (NOTE: RC 6.5.51 contains the majority of the release notes)
 - https://community.ui.com/releases/UniFi-Network-Application-6-5-51/781e3ae2-0f56-42ba-8753-599d4aaa1638

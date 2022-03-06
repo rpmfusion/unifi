@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        6.5.55
-Release:        2%{?dist}
+Version:        7.0.23
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -134,9 +134,9 @@ Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 1.7.30
-Provides:       bundled(log4j-api) = 2.16.0
-Provides:       bundled(log4j-core) = 2.16.0
-Provides:       bundled(log4j-slf4j-impl) = 2.16.0
+Provides:       bundled(log4j-api) = 2.17.0
+Provides:       bundled(log4j-core) = 2.17.0
+Provides:       bundled(log4j-slf4j-impl) = 2.17.0
 Provides:       bundled(mongo-java-driver) = 3.4.3
 Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
@@ -180,13 +180,11 @@ Provides:       bundled(spring-websocket) = 5.3.7
 Provides:       bundled(sshj) = 0.27.0
 Provides:       bundled(swagger-annotations) = 1.5.20
 Provides:       bundled(swagger-models) = 1.5.20
-Provides:       bundled(tomcat-annotations-api) = 8.5.56
-Provides:       bundled(tomcat-embed-core) = 8.5.56
-Provides:       bundled(tomcat-embed-el) = 8.5.56
-Provides:       bundled(tomcat-embed-jasper) = 8.5.56
-Provides:       bundled(tomcat-embed-logging-juli) = 8.5.2
-Provides:       bundled(tomcat-embed-logging-log4j) = 8.5.2
-Provides:       bundled(tomcat-embed-websocket) = 8.5.56
+Provides:       bundled(tomcat-annotations-api) = 9.0.53
+Provides:       bundled(tomcat-embed-core) = 9.0.53
+Provides:       bundled(tomcat-embed-el) = 9.0.53
+Provides:       bundled(tomcat-embed-jasper) = 9.0.53
+Provides:       bundled(tomcat-embed-websocket) = 9.0.53
 Provides:       bundled(urlrewritefilter) = 4.0.4
 ### END AUTOMATION ###
 
@@ -362,6 +360,9 @@ fi
 
 
 %changelog
+* Fri Mar 04 2022 Richard Shaw <hobbes1069@gmail.com> - 7.0.23-1
+- Update to 7.0.23.
+
 * Thu Feb 10 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 6.5.55-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 

@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.1.66
+Version:        7.1.68
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -358,6 +358,11 @@ fi
 
 
 %changelog
+* Tue Aug 02 2022 Soren Timmerman <sorentimmerman@gmail.com> - 7.1.68-1
+- Update to 7.1.68.
+- Release notes:
+  https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874
+
 * Thu Jun 02 2022 Richard Shaw <hobbes1069@gmail.com> - 7.1.66-1
 - Update to 7.1.66.
 - Release notes:

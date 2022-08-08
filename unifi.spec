@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        7.1.68
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -358,6 +358,10 @@ fi
 
 
 %changelog
+* Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 7.1.68-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
+  5.1
+
 * Sat Jul 30 2022 Richard Shaw <hobbes1069@gmail.com> - 7.1.68-1
 - Update to 7.1.68 see release notes for details.
   https://community.ui.com/releases/UniFi-Network-Application-7-1-68/30df65ee-9adf-44da-ba0c-f30766c2d874

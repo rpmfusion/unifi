@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.1.68
-Release:        2%{?dist}
+Version:        7.2.92
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -71,12 +71,12 @@ Provides:       bundled(commons-codec) = 1.11
 Provides:       bundled(commons-dbcp2) = 2.7.0
 Provides:       bundled(commons-httpclient-3.1-atlassian) = 2
 Provides:       bundled(commons-httpclient-contrib) = 3.1
-Provides:       bundled(commons-io) = 2.6
-Provides:       bundled(commons-lang3) = 3.10
+Provides:       bundled(commons-io) = 2.11.0
+Provides:       bundled(commons-lang3) = 3.12.0
 Provides:       bundled(commons-logging) = 1.2
-Provides:       bundled(commons-net) = 3.6
+Provides:       bundled(commons-net) = 3.8.0
 Provides:       bundled(commons-pool2) = 2.7.0
-Provides:       bundled(commons-text) = 1.8
+Provides:       bundled(commons-text) = 1.9
 Provides:       bundled(commons-validator) = 1.6
 Provides:       bundled(compiler) = 0.9.6
 Provides:       bundled(cron4j) = 2.2.5
@@ -107,8 +107,8 @@ Provides:       bundled(gson) = 2.8.5
 Provides:       bundled(gson-java8-datatype) = 1.1.0
 Provides:       bundled(guava-31.0.1) = jre
 Provides:       bundled(hibernate-validator) = 6.1.2.Final
-Provides:       bundled(httpclient) = 4.5.10
-Provides:       bundled(httpcore) = 4.4.12
+Provides:       bundled(httpclient) = 4.5.13
+Provides:       bundled(httpcore) = 4.4.13
 Provides:       bundled(j2objc-annotations) = 1.3
 Provides:       bundled(jackson-annotations) = 2.13.1
 Provides:       bundled(jackson-core) = 2.13.1
@@ -123,7 +123,7 @@ Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(java-uuid-generator) = 4.0.1
 Provides:       bundled(javax.mail) = 1.6.2
 Provides:       bundled(jboss-logging) = 3.3.2.Final
-Provides:       bundled(jcl-over-slf4j) = 1.7.33
+Provides:       bundled(jcl-over-slf4j) = 1.7.36
 Provides:       bundled(jenetics) = 4.2.0
 Provides:       bundled(jmdns) = 3.4.1
 Provides:       bundled(joda-time) = 2.10.4
@@ -132,7 +132,7 @@ Provides:       bundled(json) = 20190722
 Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
-Provides:       bundled(jul-to-slf4j) = 1.7.33
+Provides:       bundled(jul-to-slf4j) = 1.7.36
 Provides:       bundled(log4j-api) = 2.17.2
 Provides:       bundled(log4j-core) = 2.17.2
 Provides:       bundled(log4j-slf4j-impl) = 2.17.2
@@ -150,17 +150,17 @@ Provides:       bundled(reactor-core) = 3.4.0
 Provides:       bundled(servo-aws) = 0.13.0
 Provides:       bundled(servo-core) = 0.13.0
 Provides:       bundled(servo-graphite) = 0.13.0
-Provides:       bundled(slf4j-api) = 1.7.33
+Provides:       bundled(slf4j-api) = 1.7.36
 Provides:       bundled(snappy-java) = 1.1.7.5
 Provides:       bundled(spectator-api) = 0.88.0
 Provides:       bundled(spqr) = 0.10.1
-Provides:       bundled(spring-aop) = 5.3.15
-Provides:       bundled(spring-beans) = 5.3.15
-Provides:       bundled(spring-context) = 5.3.15
-Provides:       bundled(spring-core) = 5.3.15
+Provides:       bundled(spring-aop) = 5.3.18
+Provides:       bundled(spring-beans) = 5.3.18
+Provides:       bundled(spring-context) = 5.3.18
+Provides:       bundled(spring-core) = 5.3.18
 Provides:       bundled(spring-data-commons) = 1.13.23
 Provides:       bundled(spring-data-mongodb) = 1.10.23
-Provides:       bundled(spring-expression) = 5.3.15
+Provides:       bundled(spring-expression) = 5.3.18
 Provides:       bundled(springfox-core) = 2.9.2
 Provides:       bundled(springfox-schema) = 2.9.2
 Provides:       bundled(springfox-spi) = 2.9.2
@@ -170,19 +170,19 @@ Provides:       bundled(springfox-swagger-common) = 2.9.2
 Provides:       bundled(springfox-swagger-ui) = 2.9.2
 Provides:       bundled(spring-plugin-core) = 1.2.0
 Provides:       bundled(spring-plugin-metadata) = 1.2.0
-Provides:       bundled(spring-test) = 5.3.15
-Provides:       bundled(spring-tx) = 5.3.15
-Provides:       bundled(spring-web) = 5.3.15
-Provides:       bundled(spring-webmvc) = 5.3.15
-Provides:       bundled(spring-websocket) = 5.3.15
+Provides:       bundled(spring-test) = 5.3.18
+Provides:       bundled(spring-tx) = 5.3.18
+Provides:       bundled(spring-web) = 5.3.18
+Provides:       bundled(spring-webmvc) = 5.3.18
+Provides:       bundled(spring-websocket) = 5.3.18
 Provides:       bundled(sshj) = 0.27.0
 Provides:       bundled(swagger-annotations) = 1.5.20
 Provides:       bundled(swagger-models) = 1.5.20
-Provides:       bundled(tomcat-annotations-api) = 9.0.58
-Provides:       bundled(tomcat-embed-core) = 9.0.58
-Provides:       bundled(tomcat-embed-el) = 9.0.58
-Provides:       bundled(tomcat-embed-jasper) = 9.0.58
-Provides:       bundled(tomcat-embed-websocket) = 9.0.58
+Provides:       bundled(tomcat-annotations-api) = 9.0.59
+Provides:       bundled(tomcat-embed-core) = 9.0.59
+Provides:       bundled(tomcat-embed-el) = 9.0.59
+Provides:       bundled(tomcat-embed-jasper) = 9.0.59
+Provides:       bundled(tomcat-embed-websocket) = 9.0.59
 Provides:       bundled(urlrewritefilter) = 4.0.4
 ### END AUTOMATION ###
 
@@ -358,6 +358,10 @@ fi
 
 
 %changelog
+* Sun Aug 14 2022 Richard Shaw <hobbes1069@gmail.com> - 7.2.92-1
+- Update to 7.2.92, see release notes for details.
+  https://community.ui.com/releases/UniFi-Network-Application-7-2-92/f1903cbc-4daa-4695-ac8c-7324bcff529a
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 7.1.68-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1

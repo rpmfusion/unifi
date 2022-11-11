@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.2.92
+Version:        7.2.95
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -76,7 +76,7 @@ Provides:       bundled(commons-lang3) = 3.12.0
 Provides:       bundled(commons-logging) = 1.2
 Provides:       bundled(commons-net) = 3.8.0
 Provides:       bundled(commons-pool2) = 2.7.0
-Provides:       bundled(commons-text) = 1.9
+Provides:       bundled(commons-text) = 1.10.0
 Provides:       bundled(commons-validator) = 1.6
 Provides:       bundled(compiler) = 0.9.6
 Provides:       bundled(cron4j) = 2.2.5
@@ -358,6 +358,10 @@ fi
 
 
 %changelog
+* Tue Nov 08 2022 Richard Shaw <hobbes1069@gmail.com> - 7.2.95-1
+- Update to 7.2.95, for details see:
+  https://community.ui.com/releases/UniFi-Network-Application-7-2-95/7adebab5-8c41-4989-835d-ab60dba55255
+
 * Sun Aug 14 2022 Richard Shaw <hobbes1069@gmail.com> - 7.2.92-1
 - Update to 7.2.92, see release notes for details.
   https://community.ui.com/releases/UniFi-Network-Application-7-2-92/f1903cbc-4daa-4695-ac8c-7324bcff529a

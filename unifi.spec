@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.2.95
+Version:        7.3.76
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -30,7 +30,7 @@ BuildRequires:  %{_bindir}/execstack
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
-Requires:       java-headless >= 1:1.8.0
+Requires:       java-11-headless
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -48,6 +48,7 @@ Provides:       bundled(ubnt-fonts)
 # Bundled java libraries
 ### BEGIN AUTOMATION ###
 Provides:       bundled(ace) = 9999
+Provides:       bundled(activation) = 1.1.1
 Provides:       bundled(analytics-api) = 1.2.1
 Provides:       bundled(analytics-client) = 1.2.1
 Provides:       bundled(analytics-privacy) = 1.2.1
@@ -117,15 +118,21 @@ Provides:       bundled(jackson-datatype-jdk8) = 2.13.1
 Provides:       bundled(jackson-datatype-jsr310) = 2.13.1
 Provides:       bundled(jackson-module-parameter-names) = 2.13.1
 Provides:       bundled(jakarta.validation-api) = 2.0.2
+Provides:       bundled(java-binme) = 1.0
 Provides:       bundled(java-dataloader) = 2.1.1
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
+Provides:       bundled(java-ucp) = 1.1
 Provides:       bundled(java-uuid-generator) = 4.0.1
 Provides:       bundled(javax.mail) = 1.6.2
+Provides:       bundled(jaxb-api) = 2.3.0
+Provides:       bundled(jaxb-core) = 2.3.0.1
+Provides:       bundled(jaxb-impl) = 2.3.0.1
 Provides:       bundled(jboss-logging) = 3.3.2.Final
 Provides:       bundled(jcl-over-slf4j) = 1.7.36
 Provides:       bundled(jenetics) = 4.2.0
 Provides:       bundled(jmdns) = 3.4.1
+Provides:       bundled(jna) = 5.9.0
 Provides:       bundled(joda-time) = 2.10.4
 Provides:       bundled(jorbis) = 0.0.17
 Provides:       bundled(json) = 20190722
@@ -133,9 +140,11 @@ Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 1.7.36
+Provides:       bundled(lazysodium-java) = 5.1.2
 Provides:       bundled(log4j-api) = 2.17.2
 Provides:       bundled(log4j-core) = 2.17.2
 Provides:       bundled(log4j-slf4j-impl) = 2.17.2
+Provides:       bundled(minimal-json) = 0.9.5
 Provides:       bundled(mongo-java-driver) = 3.4.3
 Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
@@ -147,11 +156,12 @@ Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(radclient4) = 0.12.0
 Provides:       bundled(reactive-streams) = 1.0.3
 Provides:       bundled(reactor-core) = 3.4.0
+Provides:       bundled(resource-loader) = 2.0.2
 Provides:       bundled(servo-aws) = 0.13.0
 Provides:       bundled(servo-core) = 0.13.0
 Provides:       bundled(servo-graphite) = 0.13.0
 Provides:       bundled(slf4j-api) = 1.7.36
-Provides:       bundled(snappy-java) = 1.1.7.5
+Provides:       bundled(snappy-java) = 1.1.8.4
 Provides:       bundled(spectator-api) = 0.88.0
 Provides:       bundled(spqr) = 0.10.1
 Provides:       bundled(spring-aop) = 5.3.18
@@ -358,6 +368,9 @@ fi
 
 
 %changelog
+* Wed Nov 30 2022 Richard Shaw <hobbes1069@gmail.com> - 7.3.76-1
+- Update to 7.3.76.
+
 * Tue Nov 08 2022 Richard Shaw <hobbes1069@gmail.com> - 7.2.95-1
 - Update to 7.2.95, for details see:
   https://community.ui.com/releases/UniFi-Network-Application-7-2-95/7adebab5-8c41-4989-835d-ab60dba55255

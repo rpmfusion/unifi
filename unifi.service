@@ -8,9 +8,9 @@ Type=simple
 User=unifi
 WorkingDirectory=/usr/share/unifi
 EnvironmentFile=-/etc/sysconfig/unifi
-Environment=JAVA_HOME=/usr/lib/jvm/jre-1.8.0
-ExecStart=/usr/lib/jvm/jre-1.8.0/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
-ExecStop=/usr/lib/jvm/jre-1.8.0/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
+Environment=JAVA_HOME=/usr/lib/jvm/jre-11
+ExecStart=/usr/lib/jvm/jre-11/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
+ExecStop=/usr/lib/jvm/jre-11/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
 Restart=on-success
 
 [Install]

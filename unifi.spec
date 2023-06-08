@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.3.83
+Version:        7.4.156
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -53,30 +53,24 @@ Provides:       bundled(analytics-api) = 1.2.1
 Provides:       bundled(analytics-client) = 1.2.1
 Provides:       bundled(analytics-privacy) = 1.2.1
 Provides:       bundled(annotations) = 3.0.1
-Provides:       bundled(antlr4-runtime) = 4.7.2
 Provides:       bundled(api-common) = 1.7.0
 Provides:       bundled(apigateway-generic-java-sdk) = 1.3
 Provides:       bundled(aws-iot-device-sdk-java) = 1.2.0
-Provides:       bundled(aws-java-sdk-cloudwatch) = 1.11.409
 Provides:       bundled(aws-java-sdk-core) = 1.11.409
 Provides:       bundled(aws-java-sdk-s3) = 1.11.409
 Provides:       bundled(bcpkix-jdk15on) = 1.60
 Provides:       bundled(bcprov-jdk15on) = 1.60
-Provides:       bundled(byte-buddy) = 1.8.12
+Provides:       bundled(bson) = 4.6.1
+Provides:       bundled(bson-record-codec) = 4.6.1
 Provides:       bundled(checker-qual) = 3.12.0
-Provides:       bundled(classgraph) = 4.8.59
-Provides:       bundled(classmate) = 1.4.0
+Provides:       bundled(classmate) = 1.5.1
 Provides:       bundled(coloring) = 1.0
 Provides:       bundled(commons-beanutils) = 1.9.2
-Provides:       bundled(commons-codec) = 1.11
-Provides:       bundled(commons-dbcp2) = 2.7.0
-Provides:       bundled(commons-httpclient-3.1-atlassian) = 2
-Provides:       bundled(commons-httpclient-contrib) = 3.1
+Provides:       bundled(commons-codec) = 1.15
 Provides:       bundled(commons-io) = 2.11.0
 Provides:       bundled(commons-lang3) = 3.12.0
 Provides:       bundled(commons-logging) = 1.2
 Provides:       bundled(commons-net) = 3.8.0
-Provides:       bundled(commons-pool2) = 2.7.0
 Provides:       bundled(commons-text) = 1.10.0
 Provides:       bundled(commons-validator) = 1.6
 Provides:       bundled(compiler) = 0.9.6
@@ -87,7 +81,6 @@ Provides:       bundled(eddsa) = 0.2.0
 Provides:       bundled(error_prone_annotations) = 2.7.1
 Provides:       bundled(failureaccess) = 1.0.1
 Provides:       bundled(gax) = 1.31.0
-Provides:       bundled(geantyref) = 1.3.11
 Provides:       bundled(google-api-client) = 1.26.0
 Provides:       bundled(google-api-services-drive-v3-rev20180830) = 1.26.0
 Provides:       bundled(google-api-services-storage-v1-rev135) = 1.24.1
@@ -103,23 +96,22 @@ Provides:       bundled(google-http-client-jackson) = 1.24.1
 Provides:       bundled(google-http-client-jackson2) = 1.26.0
 Provides:       bundled(google-http-client-jdo) = 1.26.0
 Provides:       bundled(google-oauth-client) = 1.26.0
-Provides:       bundled(graphql-java) = 13.0
-Provides:       bundled(gson) = 2.8.5
-Provides:       bundled(gson-java8-datatype) = 1.1.0
+Provides:       bundled(gson) = 2.9.0
 Provides:       bundled(guava-31.0.1) = jre
-Provides:       bundled(hibernate-validator) = 6.1.2.Final
+Provides:       bundled(hibernate-validator) = 6.2.3.Final
 Provides:       bundled(httpclient) = 4.5.13
-Provides:       bundled(httpcore) = 4.4.13
+Provides:       bundled(httpcore) = 4.4.15
+Provides:       bundled(httpmime) = 4.5.13
 Provides:       bundled(j2objc-annotations) = 1.3
-Provides:       bundled(jackson-annotations) = 2.13.1
-Provides:       bundled(jackson-core) = 2.13.1
-Provides:       bundled(jackson-databind) = 2.13.1
-Provides:       bundled(jackson-datatype-jdk8) = 2.13.1
-Provides:       bundled(jackson-datatype-jsr310) = 2.13.1
-Provides:       bundled(jackson-module-parameter-names) = 2.13.1
+Provides:       bundled(jackson-annotations) = 2.13.3
+Provides:       bundled(jackson-core) = 2.13.3
+Provides:       bundled(jackson-databind) = 2.13.3
+Provides:       bundled(jackson-datatype-jdk8) = 2.13.3
+Provides:       bundled(jackson-datatype-jsr310) = 2.13.3
+Provides:       bundled(jackson-module-parameter-names) = 2.13.3
+Provides:       bundled(jakarta.annotation-api) = 1.3.5
 Provides:       bundled(jakarta.validation-api) = 2.0.2
 Provides:       bundled(java-binme) = 1.0
-Provides:       bundled(java-dataloader) = 2.1.1
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(java-ucp) = 1.1
@@ -128,13 +120,12 @@ Provides:       bundled(javax.mail) = 1.6.2
 Provides:       bundled(jaxb-api) = 2.3.0
 Provides:       bundled(jaxb-core) = 2.3.0.1
 Provides:       bundled(jaxb-impl) = 2.3.0.1
-Provides:       bundled(jboss-logging) = 3.3.2.Final
+Provides:       bundled(jboss-logging) = 3.4.3.Final
 Provides:       bundled(jcl-over-slf4j) = 1.7.36
 Provides:       bundled(jenetics) = 4.2.0
 Provides:       bundled(jmdns) = 3.4.1
 Provides:       bundled(jna) = 5.9.0
 Provides:       bundled(joda-time) = 2.10.4
-Provides:       bundled(jorbis) = 0.0.17
 Provides:       bundled(json) = 20190722
 Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
@@ -142,10 +133,13 @@ Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 1.7.36
 Provides:       bundled(lazysodium-java) = 5.1.2
 Provides:       bundled(log4j-api) = 2.17.2
-Provides:       bundled(log4j-core) = 2.17.2
-Provides:       bundled(log4j-slf4j-impl) = 2.17.2
+Provides:       bundled(log4j-to-slf4j) = 2.17.2
+Provides:       bundled(logback-classic) = 1.2.11
+Provides:       bundled(logback-core) = 1.2.11
 Provides:       bundled(minimal-json) = 0.9.5
-Provides:       bundled(mongo-java-driver) = 3.4.3
+Provides:       bundled(mongodb-driver-core) = 4.6.1
+Provides:       bundled(mongodb-driver-legacy) = 4.6.1
+Provides:       bundled(mongodb-driver-sync) = 4.6.1
 Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
 Provides:       bundled(owasp-java-html-sanitizer) = 20190503.1
@@ -154,45 +148,41 @@ Provides:       bundled(protobuf-java-util) = 3.6.0
 Provides:       bundled(proto-google-common-protos) = 1.12.0
 Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(radclient4) = 0.12.0
-Provides:       bundled(reactive-streams) = 1.0.3
-Provides:       bundled(reactor-core) = 3.4.0
+Provides:       bundled(reactive-streams) = 1.0.4
+Provides:       bundled(reactor-core) = 3.4.21
 Provides:       bundled(resource-loader) = 2.0.2
-Provides:       bundled(servo-aws) = 0.13.0
-Provides:       bundled(servo-core) = 0.13.0
-Provides:       bundled(servo-graphite) = 0.13.0
 Provides:       bundled(slf4j-api) = 1.7.36
+Provides:       bundled(snakeyaml) = 1.30
 Provides:       bundled(snappy-java) = 1.1.8.4
-Provides:       bundled(spectator-api) = 0.88.0
-Provides:       bundled(spqr) = 0.10.1
-Provides:       bundled(spring-aop) = 5.3.18
-Provides:       bundled(spring-beans) = 5.3.18
-Provides:       bundled(spring-context) = 5.3.18
-Provides:       bundled(spring-core) = 5.3.18
-Provides:       bundled(spring-data-commons) = 1.13.23
-Provides:       bundled(spring-data-mongodb) = 1.10.23
-Provides:       bundled(spring-expression) = 5.3.18
-Provides:       bundled(springfox-core) = 2.9.2
-Provides:       bundled(springfox-schema) = 2.9.2
-Provides:       bundled(springfox-spi) = 2.9.2
-Provides:       bundled(springfox-spring-web) = 2.9.2
-Provides:       bundled(springfox-swagger2) = 2.9.2
-Provides:       bundled(springfox-swagger-common) = 2.9.2
-Provides:       bundled(springfox-swagger-ui) = 2.9.2
-Provides:       bundled(spring-plugin-core) = 1.2.0
-Provides:       bundled(spring-plugin-metadata) = 1.2.0
-Provides:       bundled(spring-test) = 5.3.18
-Provides:       bundled(spring-tx) = 5.3.18
-Provides:       bundled(spring-web) = 5.3.18
-Provides:       bundled(spring-webmvc) = 5.3.18
-Provides:       bundled(spring-websocket) = 5.3.18
+Provides:       bundled(spring-aop) = 5.3.22
+Provides:       bundled(spring-beans) = 5.3.22
+Provides:       bundled(spring-boot) = 2.7.2
+Provides:       bundled(spring-boot-autoconfigure) = 2.7.2
+Provides:       bundled(spring-boot-starter) = 2.7.2
+Provides:       bundled(spring-boot-starter-data-mongodb) = 2.7.2
+Provides:       bundled(spring-boot-starter-json) = 2.7.2
+Provides:       bundled(spring-boot-starter-logging) = 2.7.2
+Provides:       bundled(spring-boot-starter-tomcat) = 2.7.2
+Provides:       bundled(spring-boot-starter-validation) = 2.7.2
+Provides:       bundled(spring-boot-starter-web) = 2.7.2
+Provides:       bundled(spring-boot-starter-websocket) = 2.7.2
+Provides:       bundled(spring-context) = 5.3.22
+Provides:       bundled(spring-core) = 5.3.22
+Provides:       bundled(spring-data-commons) = 2.7.2
+Provides:       bundled(spring-data-mongodb) = 3.4.2
+Provides:       bundled(spring-expression) = 5.3.22
+Provides:       bundled(spring-messaging) = 5.3.22
+Provides:       bundled(spring-tx) = 5.3.22
+Provides:       bundled(spring-web) = 5.3.22
+Provides:       bundled(spring-webmvc) = 5.3.22
+Provides:       bundled(spring-websocket) = 5.3.22
 Provides:       bundled(sshj) = 0.27.0
-Provides:       bundled(swagger-annotations) = 1.5.20
-Provides:       bundled(swagger-models) = 1.5.20
-Provides:       bundled(tomcat-annotations-api) = 9.0.59
-Provides:       bundled(tomcat-embed-core) = 9.0.59
-Provides:       bundled(tomcat-embed-el) = 9.0.59
-Provides:       bundled(tomcat-embed-jasper) = 9.0.59
-Provides:       bundled(tomcat-embed-websocket) = 9.0.59
+Provides:       bundled(tomcat-annotations-api) = 9.0.65
+Provides:       bundled(tomcat-embed-core) = 9.0.65
+Provides:       bundled(tomcat-embed-el) = 9.0.65
+Provides:       bundled(tomcat-embed-jasper) = 9.0.65
+Provides:       bundled(tomcat-embed-programmatic) = 9.0.65
+Provides:       bundled(tomcat-embed-websocket) = 9.0.65
 Provides:       bundled(urlrewritefilter) = 4.0.4
 ### END AUTOMATION ###
 
@@ -368,6 +358,10 @@ fi
 
 
 %changelog
+* Thu Jun 08 2023 Richard Shaw <hobbes1069@gmail.com> - 7.4.156-1
+- Update to 7.4.156.
+  https://community.ui.com/releases/UniFi-Network-Application-7-4-156/15ac6260-9cd1-4ac3-a91c-4880c1c87882
+
 * Tue Feb 07 2023 Richard Shaw <hobbes1069@gmail.com> - 7.3.83-1
 - Update to 7.3.83, for detail see:
   https://community.ui.com/releases/UniFi-Network-Application-7-3-83/88f5ff3f-4c13-45e2-b57e-ad04b4140528

@@ -35,7 +35,9 @@ Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
 # Unbundled fonts
+%if %{?fedora} < 39
 Requires:       fontawesome-fonts
+%endif
 Requires:       fontawesome-fonts-web
 
 # Prevent both packges from being installed.

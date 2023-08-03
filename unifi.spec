@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        7.4.162
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -360,6 +360,9 @@ fi
 
 
 %changelog
+* Thu Aug 03 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 7.4.162-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Fri Jul 07 2023 Richard Shaw <hobbes1069@gmail.com> - 7.4.162-1
 - Update to 7.4.162.
 

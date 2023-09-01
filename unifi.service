@@ -1,5 +1,5 @@
 [Unit]
-Description=Ubiquiti UniFi server
+Description=UniFi Network Application
 After=local-fs.target remote-fs.target network-online.target
 Wants=network-online.target
 
@@ -8,9 +8,10 @@ Type=simple
 User=unifi
 WorkingDirectory=/usr/share/unifi
 EnvironmentFile=-/etc/sysconfig/unifi
-Environment=JAVA_HOME=/usr/lib/jvm/jre-11
-ExecStart=/usr/lib/jvm/jre-11/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
-ExecStop=/usr/lib/jvm/jre-11/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
+Environment=JAVA_HOME=/usr/lib/jvm/jre-17
+ExecStart=/usr/lib/jvm/jre-17/bin/java --add-opens=java.base/java.time=ALL-UNNAMED $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
+ExecStop=/usr/lib/jvm/jre-17/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
+SuccessExitStatus=143
 Restart=on-success
 
 [Install]

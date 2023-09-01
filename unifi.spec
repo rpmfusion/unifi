@@ -4,8 +4,8 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.4.162
-Release:        2%{?dist}
+Version:        7.5.174
+Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
 License:        Proprietary
@@ -30,7 +30,7 @@ BuildRequires:  %{_bindir}/execstack
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
-Requires:       java-11-headless
+Requires:       java-17-headless
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -51,9 +51,9 @@ Provides:       bundled(ubnt-fonts)
 ### BEGIN AUTOMATION ###
 Provides:       bundled(ace) = 9999
 Provides:       bundled(activation) = 1.1.1
-Provides:       bundled(analytics-api) = 1.2.1
-Provides:       bundled(analytics-client) = 1.2.1
-Provides:       bundled(analytics-privacy) = 1.2.1
+Provides:       bundled(analytics-api) = 1.3.0
+Provides:       bundled(analytics-client) = 1.3.0
+Provides:       bundled(analytics-privacy) = 1.3.0
 Provides:       bundled(annotations) = 3.0.1
 Provides:       bundled(api-common) = 1.7.0
 Provides:       bundled(apigateway-generic-java-sdk) = 1.3
@@ -136,6 +136,7 @@ Provides:       bundled(jul-to-slf4j) = 1.7.36
 Provides:       bundled(lazysodium-java) = 5.1.2
 Provides:       bundled(log4j-api) = 2.17.2
 Provides:       bundled(log4j-to-slf4j) = 2.17.2
+Provides:       bundled(logback-access) = 1.2.11
 Provides:       bundled(logback-classic) = 1.2.11
 Provides:       bundled(logback-core) = 1.2.11
 Provides:       bundled(minimal-json) = 0.9.5
@@ -256,16 +257,12 @@ install -pm 0644 %{SOURCE3} %{buildroot}%{_prefix}/lib/firewalld/services/
 # Remove non-native executables
 rm -rf %{buildroot}%{_datadir}/unifi/lib/native/{Windows,Mac}
 
-# Bundled libs are only supported on x86_64, aarch64 and armv7hf.
+# Bundled libs are only supported on x86_64, aarch64.
 # Move libraries to the correct location and symlink back
 mv %{buildroot}%{_datadir}/unifi/lib/native/Linux ./
-%ifarch x86_64 armv7hl aarch64
+%ifarch x86_64 aarch64
 # Set the correct arch for the webrtc library.
-%ifarch armv7hl
-%global unifi_arch armv7
-%else 
 %global unifi_arch %{_target_cpu}
-%endif
 mkdir -p %{buildroot}%{_libdir}/unifi \
          %{buildroot}%{_datadir}/unifi/lib/native/Linux/%{unifi_arch}
 install -pm 0755 Linux/%{unifi_arch}/*.so %{buildroot}%{_libdir}/%{name}/
@@ -337,7 +334,7 @@ fi
 %files
 %doc readme.txt SETUP
 %license PERMISSION*.html
-%ifarch x86_64 armv7hl aarch64
+%ifarch x86_64 aarch64
 %{_libdir}/unifi/
 %{_datadir}/unifi/lib/native/
 %endif
@@ -360,6 +357,16 @@ fi
 
 
 %changelog
+* Fri Sep 01 2023 Richard Shaw <hobbes1069@gmail.com>
+- Update to 7.5.174.
+- Requires Java 17.
+- Updated SystemD service file.
+- Removed conditionals for arches no longer supported.
+
+* Mon Aug 28 2023 Richard Shaw <hobbes1069@gmail.com> - 7.5.172-1
+- Update to 7.5.172.
+- Requires Java 17.
+
 * Thu Aug 03 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 7.4.162-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
 

@@ -3,11 +3,11 @@
 SPECFILE=$(pwd)/unifi.spec
 
 SOURCES=$( spectool -l -s 0 $SPECFILE )
-DLURL=$( echo $SOURCES | egrep '^Source0:\s+' | sed 's/^Source0://' )
+DLURL=$( echo $SOURCES | grep -E '^Source0:\s+' | sed 's/^Source0://' )
 SOURCEFILE=$(pwd)/$( echo $DLURL | sed 's/http.*\///' )
 TEMPDIR=$( mktemp -d -t unifi_XXXXXXXXXX )
 TEMPLIBDIR=$TEMPDIR/UniFi/lib
-VERSION=$( egrep '^Version:\s+' $SPECFILE | sed 's/^Version://' )
+VERSION=$( grep -E '^Version:\s+' $SPECFILE | sed 's/^Version://' )
 VERSIONFILE=$TEMPDIR/provides.list
 if [ x"$VERSION" = x ]; then
   echo "Unable to determine the version to scan from $SPECFILE. Exiting!"

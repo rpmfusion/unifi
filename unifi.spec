@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.5.174
+Version:        7.5.187
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -357,6 +357,9 @@ fi
 
 
 %changelog
+* Thu Oct 19 2023 Richard Shaw <hobbes1069@gmail.com> - 7.5.187-1
+- Update to 7.5.187.
+
 * Fri Sep 01 2023 Richard Shaw <hobbes1069@gmail.com>
 - Update to 7.5.174.
 - Requires Java 17.

@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        7.5.187
+Version:        8.0.7
 Release:        1%{?dist}
 Summary:        Ubiquiti UniFi controller
 
@@ -51,9 +51,9 @@ Provides:       bundled(ubnt-fonts)
 ### BEGIN AUTOMATION ###
 Provides:       bundled(ace) = 9999
 Provides:       bundled(activation) = 1.1.1
-Provides:       bundled(analytics-api) = 1.3.0
-Provides:       bundled(analytics-client) = 1.3.0
-Provides:       bundled(analytics-privacy) = 1.3.0
+Provides:       bundled(analytics-api) = 1.3.1
+Provides:       bundled(analytics-client) = 1.3.1
+Provides:       bundled(analytics-privacy) = 1.3.1
 Provides:       bundled(annotations) = 3.0.1
 Provides:       bundled(api-common) = 1.7.0
 Provides:       bundled(apigateway-generic-java-sdk) = 1.3
@@ -357,6 +357,9 @@ fi
 
 
 %changelog
+* Fri Nov 17 2023 Richard Shaw <hobbes1069@gmail.com> - 8.0.7-1
+- Update to 8.0.7.
+
 * Thu Oct 19 2023 Richard Shaw <hobbes1069@gmail.com> - 7.5.187-1
 - Update to 7.5.187.
 

@@ -4,9 +4,9 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        8.0.28
+Version:        8.1.113
 Release:        1%{?dist}
-Summary:        Ubiquiti UniFi controller
+Summary:        UniFi Network Controller
 
 License:        Proprietary
 URL:            https://unifi-sdn.ubnt.com/
@@ -357,6 +357,10 @@ fi
 
 
 %changelog
+* Tue Mar 19 2024 Richard Shaw <hobbes1069@gmail.com> - 8.1.113-1
+- Update to 8.1.113, for details see:
+  https://community.ui.com/releases/UniFi-Network-Application-8-1-113/af46fd38-8afe-4cef-8de1-89636b02b52c
+
 * Tue Jan 30 2024 Richard Shaw <hobbes1069@gmail.com> - 8.0.28-1
 - Update to 8.0.28.
 

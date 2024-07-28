@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        8.2.93
+Version:        8.3.32
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -79,7 +79,7 @@ Provides:       bundled(commons-text) = 1.11.0
 Provides:       bundled(commons-validator) = 1.8.0
 Provides:       bundled(compiler) = 0.9.6
 Provides:       bundled(cron4j) = 2.2.5
-Provides:       bundled(dom4j) = 1.6.1
+Provides:       bundled(dom4j) = 2.1.4
 Provides:       bundled(ecj) = 3.33.0
 Provides:       bundled(eddsa) = 0.3.0
 Provides:       bundled(error_prone_annotations) = 2.26.1
@@ -128,8 +128,10 @@ Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
 Provides:       bundled(java-ucp) = 1.1
 Provides:       bundled(java-uuid-generator) = 4.3.0
+Provides:       bundled(jaxb-api) = 2.2.12
 Provides:       bundled(jaxb-core) = 4.0.5
 Provides:       bundled(jaxb-impl) = 4.0.5
+Provides:       bundled(jaxen) = 2.0.0
 Provides:       bundled(jbcrypt) = 0.4
 Provides:       bundled(jboss-logging) = 3.5.3.Final
 Provides:       bundled(jcl-over-slf4j) = 2.0.13
@@ -161,9 +163,11 @@ Provides:       bundled(protobuf-java) = 3.6.0
 Provides:       bundled(protobuf-java-util) = 3.6.0
 Provides:       bundled(proto-google-common-protos) = 1.12.0
 Provides:       bundled(proto-google-iam-v1) = 0.12.0
-Provides:       bundled(radclient4) = 0.12.0
+Provides:       bundled(pull-parser) = 2.1.10
+Provides:       bundled(radclient4) = 2.1.10
 Provides:       bundled(reactive-streams) = 1.0.4
 Provides:       bundled(reactor-core) = 3.6.5
+Provides:       bundled(relaxngDatatype) = 20020414
 Provides:       bundled(resource-loader) = 2.0.2
 Provides:       bundled(slf4j-api) = 2.0.13
 Provides:       bundled(snakeyaml) = 2.2
@@ -191,12 +195,15 @@ Provides:       bundled(spring-web) = 6.1.6
 Provides:       bundled(spring-webmvc) = 6.1.6
 Provides:       bundled(spring-websocket) = 6.1.6
 Provides:       bundled(sshj) = 0.38.0
+Provides:       bundled(stax-api-1.0) = 2
 Provides:       bundled(tomcat-annotations-api) = 10.1.20
 Provides:       bundled(tomcat-embed-core) = 10.1.20
 Provides:       bundled(tomcat-embed-el) = 10.1.20
 Provides:       bundled(tomcat-embed-jasper) = 10.1.20
 Provides:       bundled(tomcat-embed-websocket) = 10.1.20
 Provides:       bundled(urlrewritefilter-4.0.4.1) = jakarta
+Provides:       bundled(xpp3) = 1.1.4c
+Provides:       bundled(xsdlib) = 2013.6.1
 ### END AUTOMATION ###
 
 # So you can prevent automatic updates.
@@ -367,6 +374,9 @@ fi
 
 
 %changelog
+* Sun Jul 28 2024 Richard Shaw <hobbes1069@gmail.com> - 8.3.32-1
+- Update to 8.3.32.
+
 * Thu Jun 06 2024 Richard Shaw <hobbes1069@gmail.com> - 8.2.93-1
 - Update to 8.2.93.
 

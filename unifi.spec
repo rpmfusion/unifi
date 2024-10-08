@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        8.4.59
+Version:        8.4.62
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -373,6 +373,9 @@ fi
 
 
 %changelog
+* Tue Oct 08 2024 Richard Shaw <hobbes1069@gmail.com> - 8.4.62-1
+- Update to 8.4.62.
+
 * Thu Sep 05 2024 Richard Shaw <hobbes1069@gmail.com> - 8.4.59-1
 - Update to 8.4.59.
 

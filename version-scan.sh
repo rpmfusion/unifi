@@ -6,7 +6,7 @@ SOURCES=$( spectool -l -s 0 $SPECFILE )
 DLURL=$( echo $SOURCES | grep -E '^Source0:\s+' | sed 's/^Source0://' )
 SOURCEFILE=$(pwd)/$( echo $DLURL | sed 's/http.*\///' )
 TEMPDIR=$( mktemp -d -t unifi_XXXXXXXXXX )
-TEMPLIBDIR=$TEMPDIR/UniFi/lib
+TEMPLIBDIR=$TEMPDIR/UniFi/lib/local
 VERSION=$( grep -E '^Version:\s+' $SPECFILE | sed 's/^Version://' )
 VERSIONFILE=$TEMPDIR/provides.list
 if [ x"$VERSION" = x ]; then
@@ -45,6 +45,7 @@ for file in `ls $TEMPLIBDIR/*.jar`; do
   if [ `echo $file | grep -` ]; then
     version=`echo $file | sed -e 's/\.jar$//' -e 's/.*-//' -e 's/\.RELEASE//'`
     determination="filename"
+	echo "Jar: $file, Version: $version"
   fi
   
   # if not, check to see if implementation-version is set, if so, go with it
@@ -60,10 +61,10 @@ for file in `ls $TEMPLIBDIR/*.jar`; do
   fi
   
   library=`echo $file | sed -e 's/.*\///' -e 's/\.jar$//' -e "s/-$version//" -e 's/\.RELEASE//'`
-  
+  #echo $library
   # create output for RPM packaging
   echo "Provides:       bundled(${library}) = ${version}" >> $VERSIONFILE
-  
+
 done
 
 echo "Created provides list in $VERSIONFILE."

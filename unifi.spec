@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        8.4.62
+Version:        8.5.6
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -49,10 +49,6 @@ Provides:       bundled(ubnt-fonts)
 
 # Bundled java libraries
 ### BEGIN AUTOMATION ###
-Provides:       bundled(ace) = 9999
-Provides:       bundled(analytics-api) = 2.0.0
-Provides:       bundled(analytics-client) = 2.0.0
-Provides:       bundled(analytics-privacy) = 2.0.0
 Provides:       bundled(angus-activation) = 2.0.2
 Provides:       bundled(annotations) = 3.0.1
 Provides:       bundled(api-common) = 1.7.0
@@ -68,7 +64,6 @@ Provides:       bundled(bson) = 4.11.2
 Provides:       bundled(bson-record-codec) = 4.11.2
 Provides:       bundled(checker-qual) = 3.42.0
 Provides:       bundled(classmate) = 1.6.0
-Provides:       bundled(coloring) = 1.0
 Provides:       bundled(commons-beanutils) = 1.9.4
 Provides:       bundled(commons-codec) = 1.16.1
 Provides:       bundled(commons-io) = 2.16.1
@@ -123,10 +118,8 @@ Provides:       bundled(jakarta.validation-api) = 3.0.2
 Provides:       bundled(jakarta.xml.bind-api) = 4.0.2
 Provides:       bundled(java10-shim) = 20240325.1
 Provides:       bundled(java8-shim) = 20240325.1
-Provides:       bundled(java-binme) = 2.0.0
 Provides:       bundled(java-ipv6) = 0.17
 Provides:       bundled(java-semver) = 0.9.0
-Provides:       bundled(java-ucp) = 1.1
 Provides:       bundled(java-uuid-generator) = 4.3.0
 Provides:       bundled(jaxb-api) = 2.2.12
 Provides:       bundled(jaxb-core) = 4.0.5
@@ -163,7 +156,6 @@ Provides:       bundled(protobuf-java-util) = 3.6.0
 Provides:       bundled(proto-google-common-protos) = 1.12.0
 Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(pull-parser) = 2.1.10
-Provides:       bundled(radclient4) = 2.1.10
 Provides:       bundled(reactive-streams) = 1.0.4
 Provides:       bundled(reactor-core) = 3.6.7
 Provides:       bundled(relaxngDatatype) = 20020414
@@ -373,6 +365,9 @@ fi
 
 
 %changelog
+* Fri Oct 18 2024 Richard Shaw <hobbes1069@gmail.com> - 8.5.6-1
+- Update to 8.5.6.
+
 * Tue Oct 08 2024 Richard Shaw <hobbes1069@gmail.com> - 8.4.62-1
 - Update to 8.4.62.
 

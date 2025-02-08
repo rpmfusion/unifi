@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        9.0.108
+Version:        9.0.114
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -30,7 +30,7 @@ BuildRequires:  %{_bindir}/execstack
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
-Requires:       java-17-headless
+Requires:       java-21-headless
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -366,6 +366,13 @@ fi
 
 
 %changelog
+* Sat Feb 08 2025 Richard Shaw <hobbes1069@gmail.com> - 9.0.114-1
+- Update to 9.0.114.
+- Update to Java 21.
+
+* Sat Feb 01 2025 Richard Shaw <hobbes1069@gmail.com> - 9.0.108-2
+- Update runtime requirements to Java 21.
+
 * Wed Jan 22 2025 Richard Shaw <hobbes1069@gmail.com> - 9.0.108-1
 - Update to 9.0.108.
 

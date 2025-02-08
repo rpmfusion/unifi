@@ -8,9 +8,9 @@ Type=simple
 User=unifi
 WorkingDirectory=/usr/share/unifi
 EnvironmentFile=-/etc/sysconfig/unifi
-Environment=JAVA_HOME=/usr/lib/jvm/jre-17
-ExecStart=/usr/lib/jvm/jre-17/bin/java --add-opens=java.base/java.time=ALL-UNNAMED $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
-ExecStop=/usr/lib/jvm/jre-17/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
+Environment=JAVA_HOME=/usr/lib/jvm/jre-21
+ExecStart=/usr/lib/jvm/jre-21/bin/java --add-opens=java.base/java.time=ALL-UNNAMED $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar start
+ExecStop=/usr/lib/jvm/jre-217/bin/java $JAVA_OPTS -jar /usr/share/unifi/lib/ace.jar stop
 SuccessExitStatus=143
 Restart=on-success
 

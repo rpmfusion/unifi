@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        9.0.114
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -366,6 +366,9 @@ fi
 
 
 %changelog
+* Tue Mar 04 2025 Richard Shaw <hobbes1069@gmail.com> - 9.0.114-2
+- Fix for typo in Unifi service file, fixes #7193.
+
 * Sat Feb 08 2025 Richard Shaw <hobbes1069@gmail.com> - 9.0.114-1
 - Update to 9.0.114.
 - Update to Java 21.

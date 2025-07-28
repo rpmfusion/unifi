@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        9.2.87
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -371,6 +371,9 @@ fi
 
 
 %changelog
+* Mon Jul 28 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 9.2.87-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
+
 * Sun Jun 22 2025 Richard Shaw <hobbes1069@gmail.com> - 9.2.87-1
 - Update to 9.2.87.
 

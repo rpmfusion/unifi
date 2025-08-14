@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        9.3.45
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -297,9 +297,10 @@ install -p %{SOURCE100} %{SOURCE101} .
 
 # Install sysconfig file.
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOL
-# Add site specific java options here by assining "JAVA_OPTS"
-EOL
+cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOF
+# Add site specific java options to "JAVA_OPTS"
+JAVA_OPTS=""
+EOF
 
 
 %pre
@@ -371,6 +372,9 @@ fi
 
 
 %changelog
+* Wed Aug 13 2025 Todd Zullinger <tmz@pobox.com> - 9.3.45-2
+- Avoid systemd warning about unset JAVA_OPTS environment variable
+
 * Sun Aug 10 2025 Richard Shaw <hobbes1069@gmail.com> - 9.3.45-1
 - Update to 9.3.45.
 

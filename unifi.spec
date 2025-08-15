@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        9.3.45
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -372,6 +372,9 @@ fi
 
 
 %changelog
+* Fri Aug 15 2025 Richard Shaw <hobbes1069@gmail.com> - 9.3.45-1
+- Update to 9.3.45.
+
 * Wed Aug 13 2025 Todd Zullinger <tmz@pobox.com> - 9.3.45-2
 - Avoid systemd warning about unset JAVA_OPTS environment variable
 

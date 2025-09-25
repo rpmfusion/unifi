@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        9.3.45
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -16,6 +16,7 @@ Source1:        unifi.service
 Source2:        unifi.xml
 Source3:        unifi-cloud.xml
 Source4:        unifi.logrotate
+Source5:        sysusers.conf
 Source100:      PERMISSION-1.html
 Source101:      PERMISSION-2.html
 Source102:      SETUP
@@ -27,6 +28,8 @@ Requires(pre):  shadow-utils
 Requires:       firewalld-filesystem
 BuildRequires:  firewalld-filesystem
 BuildRequires:  %{_bindir}/execstack
+BuildRequires:  systemd-rpm-macros
+%{?sysusers_requires_compat}
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
@@ -302,13 +305,20 @@ cat > %{buildroot}%{_sysconfdir}/sysconfig/%{name} <<EOF
 JAVA_OPTS=""
 EOF
 
+# Install sysusers file
+install -p -D -m 0644 %{SOURCE5} %{buildroot}%{_sysusersdir}/unifi.conf
+
 
 %pre
+%if 0%{?rhel} || 0%{?fedora} < 42
 getent group unifi >/dev/null || groupadd -r unifi
 getent passwd unifi >/dev/null || \
     useradd -r -g unifi -d %{_sharedstatedir}/%{name} -s /sbin/nologin \
     -c "Ubiquitu UniFi Controller" unifi
 exit 0
+%else
+%sysusers_create_compat %{SOURCE5}
+%endif
 
 %post
 %systemd_post %{name}.service
@@ -355,6 +365,7 @@ fi
 %endif
 %{_datadir}/unifi/bin/mongod
 %{_sysconfdir}/logrotate.d/%{name}
+%{_sysusersdir}/%{name}.conf
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_unitdir}/%{name}.service
 %{_prefix}/lib/firewalld/services/*.xml
@@ -372,6 +383,9 @@ fi
 
 
 %changelog
+* Thu Sep 25 2025 Richard Shaw <hobbes1069@gmail.com> - 9.3.45-2
+- Rebuild with sysusers.
+
 * Fri Aug 15 2025 Richard Shaw <hobbes1069@gmail.com> - 9.3.45-1
 - Update to 9.3.45.
 

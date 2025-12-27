@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        9.5.21
+Version:        10.0.162
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -54,8 +54,6 @@ Provides:       bundled(ubnt-fonts)
 ### BEGIN AUTOMATION ###
 Provides:       bundled(ahocorasick) = 0.6.3
 Provides:       bundled(angus-activation) = 2.0.2
-Provides:       bundled(annotations) = 3.0.1
-Provides:       bundled(api-common) = 1.7.0
 Provides:       bundled(apigateway-generic-java-sdk) = 1.3
 Provides:       bundled(asn-one) = 0.6.0
 Provides:       bundled(aws-iot-device-sdk-java) = 1.2.0
@@ -66,42 +64,28 @@ Provides:       bundled(bcutil-jdk18on) = 1.78.1
 Provides:       bundled(bson) = 5.0.1
 Provides:       bundled(bson-record-codec) = 5.0.1
 Provides:       bundled(builder) = 2.10.1
-Provides:       bundled(checker-qual) = 3.42.0
+Provides:       bundled(caffeine) = 3.2.2
+Provides:       bundled(checker-qual) = 3.43.0
 Provides:       bundled(classmate) = 1.7.0
 Provides:       bundled(coloring) = 1.0
-Provides:       bundled(commons-beanutils) = 1.9.4
+Provides:       bundled(commons-beanutils) = 1.11.0
 Provides:       bundled(commons-codec) = 1.16.1
+Provides:       bundled(commons-collections4) = 4.5.0
 Provides:       bundled(commons-io) = 2.16.1
 Provides:       bundled(commons-lang3) = 3.14.0
-Provides:       bundled(commons-logging) = 1.3.2
+Provides:       bundled(commons-logging) = 1.3.5
 Provides:       bundled(commons-math3) = 3.6.1
 Provides:       bundled(commons-net) = 3.11.1
 Provides:       bundled(commons-text) = 1.12.0
-Provides:       bundled(commons-validator) = 1.9.0
+Provides:       bundled(commons-validator) = 1.10.0
 Provides:       bundled(compiler) = 0.9.6
 Provides:       bundled(cron4j) = 2.2.5
 Provides:       bundled(dom4j) = 2.1.4
 Provides:       bundled(eddsa) = 0.3.0
-Provides:       bundled(error_prone_annotations) = 2.27.0
+Provides:       bundled(error_prone_annotations) = 2.40.0
 Provides:       bundled(failureaccess) = 1.0.2
-Provides:       bundled(gax) = 1.31.0
-Provides:       bundled(google-api-client) = 1.26.0
-Provides:       bundled(google-api-services-drive-v3-rev20180830) = 1.26.0
-Provides:       bundled(google-api-services-storage-v1-rev135) = 1.24.1
-Provides:       bundled(google-auth-library-credentials) = 0.11.0
-Provides:       bundled(google-auth-library-oauth2-http) = 0.11.0
-Provides:       bundled(google-cloud-core) = 1.44.0
-Provides:       bundled(google-cloud-core-http) = 1.44.0
-Provides:       bundled(google-cloud-storage) = 1.44.0
 Provides:       bundled(google-http-client) = 1.26.0
-Provides:       bundled(google-http-client-appengine) = 1.24.1
-Provides:       bundled(google-http-client-gson) = 1.26.0
-Provides:       bundled(google-http-client-jackson) = 1.24.1
-Provides:       bundled(google-http-client-jackson2) = 1.26.0
-Provides:       bundled(google-http-client-jdo) = 1.26.0
-Provides:       bundled(google-oauth-client) = 1.26.0
-Provides:       bundled(gson) = 2.11.0
-Provides:       bundled(guava-33.2.1) = jre
+Provides:       bundled(guava-33.3.1) = jre
 Provides:       bundled(hibernate-validator) = 8.0.2.Final
 Provides:       bundled(httpclient) = 4.5.5
 Provides:       bundled(httpclient5) = 5.3.1
@@ -141,7 +125,6 @@ Provides:       bundled(json) = 20231013
 Provides:       bundled(jsonschema-generator) = 4.37.0
 Provides:       bundled(jsonschema-module-jackson) = 4.37.0
 Provides:       bundled(jsonschema-module-jakarta-validation) = 4.37.0
-Provides:       bundled(jsr305) = 3.0.2
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 2.0.17
@@ -162,10 +145,6 @@ Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
 Provides:       bundled(owasp-java-html-sanitizer) = 20240325.1
 Provides:       bundled(parsla) = 0.2.0
-Provides:       bundled(protobuf-java) = 3.6.0
-Provides:       bundled(protobuf-java-util) = 3.6.0
-Provides:       bundled(proto-google-common-protos) = 1.12.0
-Provides:       bundled(proto-google-iam-v1) = 0.12.0
 Provides:       bundled(pull-parser) = 2.1.10
 Provides:       bundled(radclient4) = 2.1.10
 Provides:       bundled(reactive-streams) = 1.0.4
@@ -199,10 +178,10 @@ Provides:       bundled(spring-webmvc) = 6.1.21
 Provides:       bundled(spring-websocket) = 6.1.21
 Provides:       bundled(sshj) = 0.39.0
 Provides:       bundled(stax-api-1.0) = 2
-Provides:       bundled(tomcat-annotations-api) = 10.1.44
-Provides:       bundled(tomcat-embed-core) = 10.1.44
-Provides:       bundled(tomcat-embed-el) = 10.1.44
-Provides:       bundled(tomcat-embed-websocket) = 10.1.44
+Provides:       bundled(tomcat-annotations-api) = 10.1.48
+Provides:       bundled(tomcat-embed-core) = 10.1.48
+Provides:       bundled(tomcat-embed-el) = 10.1.48
+Provides:       bundled(tomcat-embed-websocket) = 10.1.48
 Provides:       bundled(urlrewritefilter-4.0.4.1) = jakarta
 Provides:       bundled(value-annotations) = 2.10.1
 Provides:       bundled(xpp3) = 1.1.4c
@@ -386,6 +365,9 @@ fi
 
 
 %changelog
+* Sat Dec 27 2025 Richard Shaw <hobbes1069@gmail.com> - 10.0.162-1
+- Update to 10.0.162.
+
 * Fri Nov 21 2025 Richard Shaw <hobbes1069@gmail.com> - 9.5.21-1
 - Update to 9.5.21.
 

@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        10.0.162
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -365,6 +365,9 @@ fi
 
 
 %changelog
+* Mon Feb 02 2026 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 10.0.162-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_44_Mass_Rebuild
+
 * Sat Dec 27 2025 Richard Shaw <hobbes1069@gmail.com> - 10.0.162-1
 - Update to 10.0.162.
 

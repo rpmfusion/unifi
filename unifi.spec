@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        10.0.162
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -33,7 +33,7 @@ BuildRequires:  systemd-rpm-macros
 
 # https://fedoraproject.org/wiki/Changes/MongoDB_Removal
 #Requires:       /usr/bin/mongod
-Requires:       java-21-headless
+Requires:       java-25-headless
 Requires(post): policycoreutils-python-utils
 Requires(postun): policycoreutils-python-utils
 
@@ -365,6 +365,9 @@ fi
 
 
 %changelog
+* Wed Feb 04 2026 Richard Shaw <hobbes1069@gmail.com> - 10.0.162-3
+- Rebuild with correct Java version requirement.
+
 * Mon Feb 02 2026 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 10.0.162-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_44_Mass_Rebuild
 

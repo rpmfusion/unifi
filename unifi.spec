@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        10.1.89
+Version:        10.2.105
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -65,14 +65,14 @@ Provides:       bundled(bson) = 5.5.2
 Provides:       bundled(bson-record-codec) = 5.5.2
 Provides:       bundled(builder) = 2.10.1
 Provides:       bundled(caffeine) = 3.2.3
-Provides:       bundled(checker-qual) = 3.43.0
+Provides:       bundled(checker-qual) = 3.49.5
 Provides:       bundled(classmate) = 1.7.1
 Provides:       bundled(coloring) = 1.0
 Provides:       bundled(commons-beanutils) = 1.11.0
 Provides:       bundled(commons-codec) = 1.18.0
 Provides:       bundled(commons-collections4) = 4.5.0
 Provides:       bundled(commons-io) = 2.16.1
-Provides:       bundled(commons-lang3) = 3.17.0
+Provides:       bundled(commons-lang3) = 3.18.0
 Provides:       bundled(commons-logging) = 1.3.5
 Provides:       bundled(commons-math3) = 3.6.1
 Provides:       bundled(commons-net) = 3.11.1
@@ -87,6 +87,7 @@ Provides:       bundled(failureaccess) = 1.0.2
 Provides:       bundled(google-http-client) = 1.26.0
 Provides:       bundled(guava-33.3.1) = jre
 Provides:       bundled(hibernate-validator) = 8.0.3.Final
+Provides:       bundled(HikariCP) = 6.3.3
 Provides:       bundled(httpclient) = 4.5.5
 Provides:       bundled(httpclient5) = 5.5.1
 Provides:       bundled(httpcore) = 4.4.16
@@ -129,6 +130,7 @@ Provides:       bundled(json) = 20231013
 Provides:       bundled(jsonschema-generator) = 4.37.0
 Provides:       bundled(jsonschema-module-jackson) = 4.37.0
 Provides:       bundled(jsonschema-module-jakarta-validation) = 4.37.0
+Provides:       bundled(jspecify) = 1.0.0
 Provides:       bundled(jstl) = 1.2
 Provides:       bundled(jstun) = 0.7.4
 Provides:       bundled(jul-to-slf4j) = 2.0.17
@@ -149,6 +151,7 @@ Provides:       bundled(openssh) = 1.0
 Provides:       bundled(org.eclipse.paho.client.mqttv3) = 1.1.0
 Provides:       bundled(owasp-java-html-sanitizer) = 20240325.1
 Provides:       bundled(parsla) = 0.2.0
+Provides:       bundled(postgresql) = 42.7.8
 Provides:       bundled(pull-parser) = 2.1.10
 Provides:       bundled(radclient4) = 2.1.10
 Provides:       bundled(reactive-streams) = 1.0.4
@@ -157,13 +160,15 @@ Provides:       bundled(relaxngDatatype) = 20020414
 Provides:       bundled(resource-loader) = 2.0.2
 Provides:       bundled(slf4j-api) = 2.0.17
 Provides:       bundled(snakeyaml) = 2.4
-Provides:       bundled(snappy-java) = 1.1.10.5
+Provides:       bundled(snappy-java) = 1.1.10.8
 Provides:       bundled(spring-aop) = 6.2.14
 Provides:       bundled(spring-beans) = 6.2.14
 Provides:       bundled(spring-boot) = 3.5.8
 Provides:       bundled(spring-boot-autoconfigure) = 3.5.8
 Provides:       bundled(spring-boot-starter) = 3.5.8
+Provides:       bundled(spring-boot-starter-data-jdbc) = 3.5.8
 Provides:       bundled(spring-boot-starter-data-mongodb) = 3.5.8
+Provides:       bundled(spring-boot-starter-jdbc) = 3.5.8
 Provides:       bundled(spring-boot-starter-json) = 3.5.8
 Provides:       bundled(spring-boot-starter-logging) = 3.5.8
 Provides:       bundled(spring-boot-starter-tomcat) = 3.5.8
@@ -173,8 +178,11 @@ Provides:       bundled(spring-boot-starter-websocket) = 3.5.8
 Provides:       bundled(spring-context) = 6.2.14
 Provides:       bundled(spring-core) = 6.2.14
 Provides:       bundled(spring-data-commons) = 3.5.6
+Provides:       bundled(spring-data-jdbc) = 3.5.6
 Provides:       bundled(spring-data-mongodb) = 4.5.6
+Provides:       bundled(spring-data-relational) = 3.5.6
 Provides:       bundled(spring-expression) = 6.2.14
+Provides:       bundled(spring-jdbc) = 6.2.14
 Provides:       bundled(spring-messaging) = 6.2.14
 Provides:       bundled(spring-tx) = 6.2.14
 Provides:       bundled(spring-web) = 6.2.14
@@ -369,6 +377,9 @@ fi
 
 
 %changelog
+* Sat Apr 04 2026 Richard Shaw <hobbes1069@gmail.com> - 10.2.105-1
+- Update to 10.2.105.
+
 * Thu Mar 19 2026 Richard Shaw <hobbes1069@gmail.com> - 10.1.89-1
 - Update to 10.1.89.
 

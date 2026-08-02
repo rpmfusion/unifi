@@ -5,7 +5,7 @@
 
 Name:           unifi
 Version:        10.5.54
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        UniFi Network Controller
 
 License:        Proprietary
@@ -375,6 +375,9 @@ fi
 
 
 %changelog
+* Sun Aug 02 2026 RPM Fusion Release Engineering <leigh123linux@rpmfusion.org> - 10.5.54-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_45_Mass_Rebuild
+
 * Mon Jul 06 2026 Richard Shaw <hobbes1069@gmail.com> - 10.5.54-1
 - Update to 10.5.54.
 

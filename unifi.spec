@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        10.5.67
+Version:        10.6.97
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -58,13 +58,13 @@ Provides:       bundled(apigateway-generic-java-sdk) = 1.3
 Provides:       bundled(asn-one) = 0.6.0
 Provides:       bundled(aws-iot-device-sdk-java) = 1.2.0
 Provides:       bundled(aws-java-sdk-core) = 1.12.777
-Provides:       bundled(bcpkix-jdk18on) = 1.78.1
-Provides:       bundled(bcprov-jdk18on) = 1.78.1
-Provides:       bundled(bcutil-jdk18on) = 1.78.1
+Provides:       bundled(bcpkix-jdk18on) = 1.84
+Provides:       bundled(bcprov-jdk18on) = 1.84
+Provides:       bundled(bcutil-jdk18on) = 1.84
 Provides:       bundled(bson) = 5.5.2
 Provides:       bundled(bson-record-codec) = 5.5.2
 Provides:       bundled(builder) = 2.10.1
-Provides:       bundled(caffeine) = 3.2.3
+Provides:       bundled(caffeine) = 3.2.4
 Provides:       bundled(checker-qual) = 3.52.0
 Provides:       bundled(classmate) = 1.7.3
 Provides:       bundled(coloring) = 1.0
@@ -81,8 +81,7 @@ Provides:       bundled(commons-validator) = 1.10.0
 Provides:       bundled(compiler) = 0.9.6
 Provides:       bundled(cron4j) = 2.2.5
 Provides:       bundled(dom4j) = 2.1.4
-Provides:       bundled(eddsa) = 0.3.0
-Provides:       bundled(error_prone_annotations) = 2.43.0
+Provides:       bundled(error_prone_annotations) = 2.49.0
 Provides:       bundled(failureaccess) = 1.0.2
 Provides:       bundled(google-http-client) = 1.26.0
 Provides:       bundled(guava-33.3.1) = jre
@@ -186,7 +185,8 @@ Provides:       bundled(spring-tx) = 6.2.18
 Provides:       bundled(spring-web) = 6.2.18
 Provides:       bundled(spring-webmvc) = 6.2.18
 Provides:       bundled(spring-websocket) = 6.2.18
-Provides:       bundled(sshj) = 0.39.0
+Provides:       bundled(sqlite-jdbc) = 3.53.1.0
+Provides:       bundled(sshj) = 0.40.0
 Provides:       bundled(stax-api-1.0) = 2
 Provides:       bundled(tomcat-annotations-api) = 10.1.54
 Provides:       bundled(tomcat-embed-core) = 10.1.54
@@ -375,6 +375,9 @@ fi
 
 
 %changelog
+* Sun Aug 30 2026 Richard Shaw <hobbes1069@gmail.com> - 10.6.97-1
+- Update to 10.6.97.
+
 * Tue Aug 11 2026 Richard Shaw <hobbes1069@gmail.com> - 10.5.67-1
 - Update to 10.5.67.
 

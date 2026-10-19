@@ -4,7 +4,7 @@
 %global __strip /bin/true
 
 Name:           unifi
-Version:        10.6.101
+Version:        10.6.106
 Release:        1%{?dist}
 Summary:        UniFi Network Controller
 
@@ -375,6 +375,10 @@ fi
 
 
 %changelog
+* Mon Oct 19 2026 Richard Shaw <hobbes1069@gmail.com> - 10.6.106-1
+- Update to 10.6.106, for changes see
+  https://community.ui.com/releases/UniFi-Network-Application-10-6-106/f206c01d-3f73-471b-b4a5-2da48f157ea6
+
 * Tue Sep 15 2026 Richard Shaw <hobbes1069@gmail.com> - 10.6.101-1
 - Update to 10.6.101.
 
